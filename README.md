@@ -21,7 +21,7 @@ development.
 - Featured Libraries - Includes Swiper.js for sliders, SweetAlert2 for
   notifications, and basicLightbox.
 
-## 👨‍💻 About the Author
+## 👨‍💻 About the Team Lead
 
 **Artem Stuzhuk**  
 Junior Full Stack Developer
