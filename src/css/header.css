@@ -120,4 +120,7 @@
     background-color: transparent;
     border-color: var(--color-mariner-dark);
   }
+  .burger-icon {
+    fill: var(--color-mariner-darkest);
+  }
 }
