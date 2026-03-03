@@ -1,5 +1,5 @@
  import Swiper from 'swiper';
-import 'swiper/css';
+import 'swiper/css/keyboard';
     const swiper = new Swiper(".mySwiper", {
       slidesPerView: 1,
       spaceBetween: 30,
