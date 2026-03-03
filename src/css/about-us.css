@@ -1,0 +1,101 @@
+/* .swiper-slide {
+    
+    background: rgba(17, 17, 17, 0.4);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(../img/about-us/Slide\ 1@1x.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+    
+}
+@media (min-resolution: 192dpi) {
+  .swiper-slide {
+     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(../img/about-us/Slide\ 1@2x.jpg);
+    }
+}
+@media only screen and (min-width: 768px) {
+  .swiper-slide {
+      min-width: 704px;
+      min-height: 890px;
+    
+     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+     url(../images/hero/hero-bg_md@1x-min.jpg);
+  }
+    
+     @media (min-resolution: 192dpi) {
+     .swiper-slide {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+       url(../images/hero/hero-bg_md@2x-min.jpg);
+       }
+}
+}
+@media only screen and (min-width: 1136px) {
+  .swiper-slide {
+      min-width: 1136px;
+      min-height: 600px;
+      padding: 0 32px;
+      
+    
+     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(../images/hero/hero-bg-min.jpg);
+  }
+  @media (min-resolution: 192dpi) {
+    .swiper-slide {
+       background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url(../images/hero/hero-bg@2x-min.jpg);
+      }
+  }
+} */
+
+.about-us-container {
+    padding-top: 64px;
+    padding-bottom: 64px;
+}
+.about-us-title {
+    max-width: 768px;
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 36px;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+
+}
+    .swiper {
+      width: 100%;
+      height: 100%;
+    }
+
+    .swiper-slide {
+      position: relative;
+      text-align: center;
+      font-size: 18px;
+      background: #444;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .swiper-img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+
+.swiper-text {
+    width: 295px;
+color: var(--color-scheme-1-background);
+position: absolute;
+z-index: 100;
+bottom: 20px;
+left: 20px;
+}
+.swiper-button-next {
+}
+.swiper-button-prev {
+}
+.swiper-pagination {
+}
