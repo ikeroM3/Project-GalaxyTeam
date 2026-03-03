@@ -109,3 +109,8 @@ body:has(.mobile-menu.is-open) {
     opacity: 1;
   }
 }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
