@@ -1,0 +1,123 @@
+.header {
+  padding: 5.19px 0 7.08px 0;
+}
+.title-logo {
+  display: flex;
+}
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.name-logo {
+  display: block;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+}
+.list-nav,
+.take-link {
+  display: none;
+}
+.item-list-nav {
+}
+.burger-menu {
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background-color: transparent;
+  width: 40px;
+  height: 40px;
+}
+.bth-open {
+}
+.burger-icon {
+  width: 24px;
+  height: 24px;
+}
+
+@media only screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+    padding: 0 32px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .header {
+    padding: 9.19px 0 11.08px;
+  }
+  .container {
+    max-width: 1440px;
+    padding: 0 64px;
+  }
+  .nav {
+    justify-content: flex-start;
+  }
+
+  .list-nav,
+  .take-link {
+    display: flex;
+  }
+  .burger-menu {
+    display: none;
+  }
+  .nav-logo {
+    margin-right: 24px;
+  }
+  .list-nav {
+    gap: 32px;
+  }
+  .item-link {
+    position: relative;
+    font-size: 16px;
+    padding: 8px 0;
+    transition: color 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+  .take-link {
+    display: inline-block;
+    margin-left: auto;
+    padding: 8px 20px;
+    color: var(--color-white);
+    background-color: var(--color-mariner-dark);
+    border-radius: 8px;
+    border: 1px solid var(--color-mariner-dark);
+    transition:
+      background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+      color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+      border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .item-link:focus,
+  .item-link:hover {
+    color: var(--color-mariner-dark);
+  }
+  .item-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #9a8a78;
+    border-radius: 2px;
+    transition: width 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+  .item-link:hover::after,
+  .item-link:focus::after {
+    width: 100%;
+  }
+  .take-link:focus,
+  .take-link:hover {
+    color: var(--color-mariner-dark);
+    background-color: transparent;
+    border-color: var(--color-mariner-dark);
+  }
+}
