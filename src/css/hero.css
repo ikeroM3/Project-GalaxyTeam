@@ -3,8 +3,7 @@ body {
 }
 
 .hero {
-    /* width: 100vh; */
-    height: 100vh;
+
     padding: 64px 0;
     background-image: url(/img/hero/hero-mob.jpg);
     background-position: center;
