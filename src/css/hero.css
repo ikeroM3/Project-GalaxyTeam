@@ -3,8 +3,7 @@ body {
 }
 
 .hero {
-
-    padding: 64px 0;
+    padding: 64px 0 115px 0;
     background-image: url(/img/hero/hero-mob.jpg);
     background-position: center;
     background-size: cover;
@@ -28,6 +27,7 @@ body {
 }
 
 .paragraph-hero {
+    max-width: 335px;
     font-weight: 400;
     font-size: 16px;
     line-height: 150%;
@@ -49,6 +49,7 @@ body {
 
 @media only screen and (min-width: 768px) {
     .hero {
+        padding: 64px 0 235px 0;
         background-image: url(/img/hero/hero-tab.jpg);
     }
 
@@ -59,17 +60,17 @@ body {
     }
 
     .title-hero {
-        max-width: 560px;
+        max-width: 622px;
     }
 
     .paragraph-hero {
-        max-width: 560px;
+        max-width: 512px;
     }
 }
 
 @media only screen and (min-width: 1440px) {
     .hero {
-        padding: 128px 0;
+        padding: 128px 0 413px 0;
         background-image: url(/img/hero/hero-desk.jpg);
     }
 
@@ -78,6 +79,7 @@ body {
             background-image: url(/img/hero/hero-desk@2x.jpg);
         }
     }
+
 
     .title-hero {
         font-size: 56px;
