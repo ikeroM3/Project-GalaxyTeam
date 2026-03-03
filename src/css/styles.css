@@ -5,3 +5,11 @@
 
 /* Sections style */
 @import url('./header.css');
+@import url('./hero.css');
+@import url('./about-us.css');
+@import url('./back-link.css');
+@import url('./badges.css');
+@import url('./faq.css');
+@import url('./order-modal.css');
+@import url('./pets-list.css');
+@import url('./footer.css');
