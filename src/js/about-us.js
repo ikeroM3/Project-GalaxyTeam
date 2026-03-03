@@ -1,6 +1,7 @@
  import Swiper from 'swiper';
 import 'swiper/css/keyboard';
-    const swiper = new Swiper(".mySwiper", {
+
+    const swiper = new Swiper(".swiper", {
       slidesPerView: 1,
       spaceBetween: 30,
       keyboard: {
@@ -15,3 +16,5 @@ import 'swiper/css/keyboard';
         prevEl: ".swiper-button-prev",
       },
     });
+const mySwiper = document.querySelector('.swiper').swiper;
+swiper.slideNext();
