@@ -4,8 +4,15 @@
     padding-bottom: 64px;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    position: relative;
     
+    
+}
+@media only screen and (min-width: 768px) {
+  .about-us-container {
+    display: flex;
+    align-items: center;
+  }
 }
 @media only screen and (min-width: 1440px) {
  .about-us-container {
@@ -31,51 +38,43 @@
     font-size: 48px;
   }
 }
-    .swiper {
+ .swiper {
       width: 100%;
       height: 100%;
-      overflow-x: hidden;
     }
-
-    .swiper-slide {
-      height: 402px;
-      position: relative;
+    .swiper .swiper-slide {
+      /* position: relative; */
       text-align: center;
+      height: 402px;
       font-size: 18px;
       background: #444;
       display: flex;
       justify-content: center;
       align-items: center;
+      margin-bottom: 24px;
     }
-    @media only screen and (min-width: 768px) {
-      .swiper-slide{
+     @media only screen and (min-width: 768px) {
+       .swiper .swiper-slide{
         height: 456px;
       }
     }
       @media only screen and (min-width: 1440px) {
-      .swiper-slide{
+       .swiper .swiper-slide{
         height: 753px;
+        margin-bottom: 48px;
       }
     }
-   .swiper-wrapper{
-    display: inline-flex;
-    margin-bottom: 24px;
-  
-}
-@media only screen and (min-width: 1440px) {
-  .swiper-wrapper {
-     margin-bottom: 48px;
-  }
-}
-.swiper-img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+    .swiper-slide img{
+       display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;  
     }
-
-
-.swiper-text {
+     .swiper-wrapper{
+     margin-bottom: 24px;
+  
+ }
+ .swiper-text {
 width: 295px;
 font-size: 16px;
 font-weight: 400;
@@ -94,51 +93,23 @@ left: 20px;
   }
 }
 @media only screen and (min-width: 1440px) {
-  .swiper-text  {
-    
+  .swiper-text  { 
     font-size: 18px;
     bottom: 64px;
     left: 64px;
-}
   }
-.swiper-wrapper-btn{
-  display: flex;
+}
+/* .swiper-controls{
+    display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-}
-@media only screen and (min-width: 768px) {
-  .swiper-wrapper-btn{
-    flex-direction: column;
-    align-items: center;
-  }
-}
-.swiper-pagination {
-  display: flex;
-  gap: 10px;
-  width: 60px;
-  height: 8px;
-  background-color: transparent;
-  margin-right: auto;
-}
-@media only screen and (min-width: 768px) {
-  .swiper-pagination {
-    margin: 0;
-    width: 100%;
-    height: 28px;
-  }
-}
-.dot{
-  width: 8px;
-  height: 8px;
-  background-color: #b3b4b5;
-  border-radius: 50%;
-  cursor: pointer;
-}
-.dot.active{
-  background-color: black;
-}
+  margin-top: 24px;
+} */
 
-.swiper-btn{
+.swiper-pagination .swiper-pagination-bullet-active{
+    background-color: black;
+  } 
+.swiper .swiper-btn {
 border: 1px solid var(--color-mariner-light);
 border-radius: 8px;
 padding: 12px;
@@ -146,7 +117,7 @@ width: 48px;
 height: 48px;
 color: var(--color-scheme-1-text);
 background: var(--color-scheme-1-foreground);
-cursor: pointer;
+
 }
 .swiper-btn:hover,
 .swiper-btn:focus{
@@ -155,41 +126,35 @@ cursor: pointer;
 .swiper-btn:active{
    box-shadow: inset 0 4px 6px -2px rgba(0, 0, 0, 0.03), inset 0 12px 16px -4px rgba(0, 0, 0, 0.08);
 }
-.swiper-btn:disabled{
+.swiper-btn-disabled{
   opacity: 0.4;
   border-color: var(--color-scheme-1-background);
 }
 
-@media only screen and (min-width: 768px) {
-  .swiper-button-next {
-      position: absolute;
-  top: 55%;
-  right: 0%;
-  }
-}
-@media only screen and (min-width: 1440px) {
-  .swiper-button-next {
-      position: absolute;
-  top: 80%;
-  right: 2%;
-  }
-}
-.about-us-btn-icon {
-  display: flex;
-  fill: currentColor;
-}
 
-@media only screen and (min-width: 768px) {
-  .swiper-button-prev {
-    position: absolute;
-      top: 55%;
-  left: 0%;
+ .swiper-button-next {
+position: absolute;
+    top: auto;
+    bottom: 54px;
+    left: 70%;
   }
-}
-@media only screen and (min-width: 1440px) {
-  .swiper-button-prev {
-    position: absolute;
-      top: 80%;
-  left: 2%;
+
+/* @media only screen and (min-width: 1440px) {
+  .swiper-button-next {
+ right: 35px;
   }
-}
+} */
+
+
+   .swiper-button-prev {
+ position: absolute;
+    top: auto;
+    bottom: 54px;
+    right: 70%;
+  }
+
+/* @media only screen and (min-width: 1440px) {
+  .swiper-button-prev {
+left: 35px;
+  }
+} */
