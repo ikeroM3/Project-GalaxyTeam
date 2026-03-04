@@ -1,3 +1,17 @@
+.pets-list-subtitle,
+.categories-filter,
+.info-species,
+.info-gender,
+.info-text,
+.categories-btn,
+.loadmore-btn,
+.show-info-btn {
+  font-family: var(--font-family);
+  font-weight: 400;
+  line-height: 150%;
+  color: var(--color-scheme-1-text);
+}
+
 .pets-list-title {
   font-family: var(--second-family);
   font-weight: 700;
@@ -5,19 +19,14 @@
   line-height: 120%;
   letter-spacing: -0.01em;
   text-align: center;
-  color: var(--color-scheme-1-text);
-
   margin-bottom: 16px;
+  margin-top: 80px;
+  color: var(--color-scheme-1-text);
 }
 
-.pets-list-tit {
-  font-family: var(--font-family);
-  font-weight: 400;
+.pets-list-subtitle {
   font-size: 18px;
-  line-height: 150%;
   text-align: center;
-  color: var(--color-scheme-1-text);
-
   margin-bottom: 40px;
 }
 
@@ -27,47 +36,28 @@
   align-items: center;
 }
 
-.categories-filter {
+.categories-list {
   display: flex;
-
-  font-family: var(--font-family);
-  font-weight: 400;
   font-size: 16px;
-  line-height: 150%;
-  color: var(--color-scheme-1-text);
-
   margin-bottom: 40px;
 }
-/* .categories-item {
-  border-radius: 100px;
-  padding: 10px 16px;
-} */
 
-.categories-btn {
-  border-radius: 100px;
+.pets-btn-categ {
   padding: 10px 16px;
-
   background-color: transparent;
+  font-size: 16px;
+  transition: all 0.2s;
 }
 
-.categories-btn.active,
-.categories-btn:hover {
-  border: 1px solid var(--opacity-transparent);
+.pets-btn-categ.active {
   border-radius: 100px;
-  padding: 10px 16px;
-
-  font-family: var(--font-family);
   font-weight: 500;
-  font-size: 16px;
-  line-height: 150%;
-  color: var(--color-scheme-1-text);
-
+  border: 1px solid var(--opacity-transparent);
   background: var(--color-scheme-1-foreground);
 }
 
 .pets-list {
   display: flex;
-
   flex-wrap: wrap;
   gap: 32px;
 }
@@ -76,37 +66,35 @@
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-
   border-radius: 16px;
   padding: 12px;
-
   width: calc((100% - 64px) / 3);
-
   height: 592px;
-
   background: var(--color-scheme-1-foreground);
 }
 
-.gallery-image {
-  border-radius: 8px;
+.gallery-image,
+.info {
   width: 392px;
-  height: 309px;
+}
 
+.gallery-image {
+  height: 309px;
+  border-radius: 8px;
   margin-bottom: 16px;
+  object-fit: cover;
 }
 
 .info {
-  width: 392px;
   height: 243px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .info-species {
-  font-family: var(--font-family);
-  font-weight: 400;
   font-size: 12px;
-  line-height: 150%;
-  color: var(--color-scheme-1-text);
-
   margin-bottom: 4px;
 }
 
@@ -117,56 +105,51 @@
   line-height: 140%;
   letter-spacing: -0.01em;
   color: var(--color-scheme-1-text);
-
   margin-bottom: 4px;
 }
+
 .info-categories {
-  font-family: var(--font-family);
   font-weight: 600;
   font-size: 12px;
-  line-height: 150%;
   color: var(--color-neutral-darkest);
-
   margin-bottom: 25px;
-
   display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
 }
 
 .categories-box {
   border: 1px solid var(--opacity-transparent);
   border-radius: 100px;
   padding: 4px 10px;
-
   display: flex;
-
   background: var(--opacity-neutral-darkest-5);
+
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 150%;
+  color: var(--color-neutral-darkest);
 }
 
 .info-age {
-  font-family: var(--font-family);
-  font-weight: 400;
   font-size: 12px;
-  line-height: 150%;
-  color: var(--color-scheme-1-text);
-
   margin-right: 16px;
-}
-.info-gender {
+
   font-family: var(--font-family);
-  font-weight: 400;
+  font-weight: 600;
   font-size: 12px;
   line-height: 150%;
-  color: var(--color-scheme-1-text);
+  color: #000;
+}
 
+.info-gender {
+  font-size: 12px;
   margin-bottom: 16px;
 }
-.info-text {
-  font-family: var(--font-family);
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 150%;
-  color: var(--color-scheme-1-text);
 
+.info-text {
+  font-size: 14px;
   margin-bottom: 16px;
 }
 
@@ -180,9 +163,9 @@
   padding: 8px 20px;
   width: 392px;
   height: 40px;
-
   background-color: transparent;
 }
+
 .show-info-btn:hover,
 .show-info-btn:focus {
   background: var(--color-mariner-light);
@@ -190,7 +173,6 @@
 }
 
 .show-info-btn:disabled {
-  border: 1px solid var(--color-neutral-darkest);
   opacity: 0.3;
 }
 
@@ -200,10 +182,9 @@
   padding: 12px 24px;
   width: 192px;
   height: 48px;
-
-  border: 1px solid var(--color-mariner-dark);
-
   background: var(--color-mariner-dark);
+
+  margin-top: 40px;
 }
 
 .loadmore-btn:hover,

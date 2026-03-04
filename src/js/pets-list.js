@@ -15,7 +15,9 @@ function markupCard({
   name,
   image,
 }) {
-  const categoriesStr = categories.map(cat => cat.name).join(', ');
+  const categoriesStr = categories
+    .map(c => `<span class="categories-box">${c.name}</span>`)
+    .join('');
 
   return `
     <li class="pets-list-item">
@@ -23,7 +25,7 @@ function markupCard({
       <div class="info">
         <p class="info-species">${species}</p>
         <p class="info-name">${name}</p>
-        <p class="info-categories categories-box">${categoriesStr}</p>
+        <p class="info-categories">${categoriesStr}</p>
        <div class="age-gender">
        <p class="info-age">${age}</p>
         <p class="info-gender">${gender}</p>
@@ -62,3 +64,26 @@ async function loadAnimals() {
 }
 
 loadmoreBtn.addEventListener('click', loadAnimals);
+
+const categoriesContainer = document.querySelector('.categories-list');
+
+async function loadCategories() {
+  try {
+    const { data: categories } = await axios.get(
+      'https://paw-hut.b.goit.study/api/categories'
+    );
+
+    categoriesContainer.innerHTML =
+      `<li class="pets-list-categ-item"><button class="pets-btn-categ active">Всі</button></li>` +
+      categories
+        .map(
+          cat =>
+            `<li class="pets-list-categ-item"><button class="pets-btn-categ">${cat.name}</button></li>`
+        )
+        .join('');
+  } catch (err) {
+    console.error('Ошибка загрузки категорий:', err);
+  }
+}
+
+loadCategories();
