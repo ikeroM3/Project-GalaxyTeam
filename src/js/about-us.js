@@ -25,5 +25,3 @@ import 'swiper/css/pagination';
         disabledClass: "swiper-btn-disabled"
       },
     });
-/* const mySwiper = document.querySelector('.swiper').swiper;
-swiper.slideNext(); */
