@@ -26,7 +26,7 @@ const hideLoader = () => loaderElement?.classList.add('hidden');
 
 const createAnimalCardMarkup = animal => {
   const categoriesMarkup = animal.categories
-    .map(category => `<span class="categories-box">${category.name}</span>`)
+    .map(category => `<span class="info-categories">${category.name}</span>`)
     .join('');
 
   return `
@@ -35,14 +35,15 @@ const createAnimalCardMarkup = animal => {
       <div class="info">
         <p class="info-species">${animal.species}</p>
         <p class="info-name">${animal.name}</p>
-        <p class="info-categories">${categoriesMarkup}</p>
+       <div class="categories-box">${categoriesMarkup}</div> 
         <div class="age-gender">
           <p class="info-age">${animal.age}</p>
           <p class="info-gender">${animal.gender}</p>
         </div>
-        <p class="info-text">${animal.shortDescription}</p>
+        <p class="info-text">${animal.shortDescription}</p> 
+        </div>
         <button class="show-info-btn">Дізнатись більше</button>
-      </div>
+     
     </li>
   `;
 };
