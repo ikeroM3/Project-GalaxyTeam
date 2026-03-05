@@ -76,35 +76,45 @@ contentPet.addEventListener('click', e => {
 
  //Рендер 
 
-  function renderPetModal (animal) { 
-    const markup = `
-     <img src="${animal.imgURL}" alt="${animal.name}" width="295" height="295" class="pet-modal-img">
-<p class="pet-modal">${animal.species}</p>
-<h3 class="pet-modal">${animal.name}</h3>
-<p class="pet-modal">${animal.age}</p>
-<p class="pet-modal">${animal.gender}</p>
-<ul class="pet-modal">
-    <li>
-        <h4 class="pet-modal">Опис:</h4>
-        <p class="pet-modal">
-            ${animal.description}
-        </p>
+function renderPetModal(animal) {
+  const markup = `
+  
+<img src="${animal.imgURL}" alt="${animal.name}" class="pet-modal-img">
 
-    </li>
-<li>
-    <h4 class="pet-modal">Здоров'я:</h4>
-    <p class="pet-modal">
-       ${animal.healthStatus}
-    </p>
+<div class="pet-modal-info">
+
+<p class="pet-modal-species">${animal.species}</p>
+
+<h3 class="pet-modal-name">${animal.name}</h3>
+
+<div class="pet-modal-meta">
+<p class="pet-modal-age">${animal.age}</p>
+<p class="pet-modal-gender">${animal.gender}</p>
+</div>
+
+<ul class="pet-modal-list">
+
+<li class="pet-modal-item">
+<h4 class="pet-modal-title">Опис:</h4>
+<p class="pet-modal-text">${animal.description}</p>
 </li>
-<li>
-    <h4 class="pet-modal">Поведінка: </h4>
-    <p class="pet-modal">
-        ${animal.behavior}
-    </p>
+
+<li class="pet-modal-item">
+<h4 class="pet-modal-title">Здоров'я:</h4>
+<p class="pet-modal-text">${animal.healthStatus}</p>
 </li>
+
+<li class="pet-modal-item">
+<h4 class="pet-modal-title">Поведінка:</h4>
+<p class="pet-modal-text">${animal.behavior}</p>
+</li>
+
 </ul>
- <button type="button" class="take-btn">Взяти додому</button>
-` ;
-contentPet.innerHTML = markup;
+
+<button type="button" class="take-btn">Взяти додому</button>
+
+</div>
+`;
+
+  contentPet.innerHTML = markup;
 }

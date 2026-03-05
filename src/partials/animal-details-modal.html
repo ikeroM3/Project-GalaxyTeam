@@ -5,6 +5,48 @@
     </button>
     
     <div class="pet-modal-content">
+
+        <!-- render -->
+         
+<img src="${animal.imgURL}" alt="${animal.name}" class="pet-modal-img">
+
+<div class="pet-modal-info">
+
+<p class="pet-modal-species">${animal.species}</p>
+
+<h3 class="pet-modal-name">${animal.name}</h3>
+
+<div class="pet-modal-meta">
+<p class="pet-modal-age">${animal.age}</p>
+<p class="pet-modal-gender">${animal.gender}</p>
+</div>
+
+<ul class="pet-modal-list">
+
+<li class="pet-modal-item">
+<h4 class="pet-modal-title">Опис:</h4>
+<p class="pet-modal-text">${animal.description}</p>
+</li>
+
+<li class="pet-modal-item">
+<h4 class="pet-modal-title">Здоров'я:</h4>
+<p class="pet-modal-text">${animal.healthStatus}</p>
+</li>
+
+<li class="pet-modal-item">
+<h4 class="pet-modal-title">Поведінка:</h4>
+<p class="pet-modal-text">${animal.behavior}</p>
+</li>
+
+</ul>
+
+<button type="button" class="take-btn">Взяти додому</button>
+
+</div>
+         <!-- end render -->
+
+</div>
+
             </div>
 
   </div>

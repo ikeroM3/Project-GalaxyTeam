@@ -30,8 +30,7 @@ inset: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 64px  20px;
- opacity: 0;
+  opacity: 0;
   visibility: hidden;
   pointer-events: none;
 transition: opacity 0.3s ease, visibility 0.3s ease;
@@ -48,6 +47,7 @@ transition: opacity 0.3s ease, visibility 0.3s ease;
      position: relative;
   background: var(--color-scheme-1-background);
   border-radius: 8px;
+  padding: 64px 20px;
   width: 100%;
   max-width: 1200px;
   height: auto;
@@ -65,10 +65,14 @@ max-height: 90vh;
 fill: var(--color-white);
 stroke-width: 1px;
 stroke: var(--color-scheme-1-text);
+width: 32px;
+height: 32px;
+margin: 16px;
   }
 
   .pet-modal-content {
-background-color: var(--color-scheme-1-background);
+width: 295px;
+height: 884px;
   }
 
 .take-btn {
@@ -88,6 +92,56 @@ background-color: var(--color-scheme-1-background);
 .take-btn:active {
     background-color: var(--color-mariner-dark);
 }
+
+
+.pet-modal-img {
+color: var(--color-scheme-1-text);
+}
+
+.pet-modal-info {
+color: var(--color-scheme-1-text);
+}
+
+.pet-modal-species {
+color: var(--color-scheme-1-text);
+}
+
+.pet-modal-name {
+color: var(--color-scheme-1-text);
+}
+
+.pet-modal-meta {
+color: var(--color-scheme-1-text);
+}
+
+.pet-modal-age {
+color: var(--color-scheme-1-text);
+}
+
+.pet-modal-gender {
+color: var(--color-scheme-1-text);
+}
+
+.pet-modal-list {
+color: var(--color-scheme-1-text);
+}
+
+.pet-modal-item {
+color: var(--color-scheme-1-text);
+}
+
+.pet-modal-title {
+color: var(--color-scheme-1-text);
+}
+
+.pet-modal-text{
+color: var(--color-scheme-1-text);
+}
+
+
+
+
+
 
 @media (min-width: 768px) {
   /* tablet */
