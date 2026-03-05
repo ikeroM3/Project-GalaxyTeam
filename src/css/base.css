@@ -85,6 +85,7 @@ body:has(.mobile-menu.is-open) {
   overflow: hidden;
 }
 
+
 .visually-hidden {
   position: absolute;
   width: 1px;
