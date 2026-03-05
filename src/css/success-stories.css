@@ -1,0 +1,31 @@
+.reviews-title {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  text-align: center;
+  color: #02060a;
+}
+
+.reviews-subtitle {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: center;
+  color: #02060a;
+}
+
+@media screen and (min-width: 768px) {
+}
+
+@media only screen and (min-width: 1440px) {
+  .reviews-title {
+    font-size: 48px;
+  }
+
+  .reviews-subtitle {
+    font-size: 18px;
+  }
+}
