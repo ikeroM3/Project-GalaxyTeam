@@ -1,4 +1,5 @@
 import axios from 'axios';
+// import { openPetModal } from './animal-details-modal.js';
 
 const galleryElement = document.querySelector('.pets-list');
 const loadMoreButton = document.querySelector('.loadmore-btn');
@@ -30,7 +31,7 @@ const createAnimalCardMarkup = animal => {
     .join('');
 
   return `
-    <li class="pets-list-item">
+    <li class="pets-list-item" data-animal-id="${animal._id}">
       <img class="gallery-image" src="${animal.image}" alt="${animal.name}" loading="lazy" />
       <div class="info">
         <p class="info-species">${animal.species}</p>
@@ -150,3 +151,13 @@ loadCategories();
 loadAnimals();
 
 loadMoreButton.addEventListener('click', loadAnimals);
+
+// galleryElement.addEventListener('click', e => {
+//   if (e.target.classList.contains('show-info-btn')) {
+//     const card = e.target.closest('.pets-list-item');
+//     const id = card?.dataset.animalId;
+//     if (id) {
+//       openPetModal(id);
+//     }
+//   }
+// });
