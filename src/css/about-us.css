@@ -73,7 +73,7 @@
     }
  
  .swiper-text {
-width: 295px;
+max-width: 295px;
 font-size: 16px;
 font-weight: 400;
 color: var(--color-scheme-1-background);
@@ -100,7 +100,8 @@ left: 20px;
 
 .about-us-container .container-swiper{
   height: 68px;
-  max-width: 335px;
+  min-width: 280px;
+  max-width: 375px;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -114,10 +115,15 @@ left: 20px;
   }
  }
 
+ .btn-wrapper{
+  display: flex;
+  gap: 8px;
+  padding-right: 8px;
+ }
 @media only screen and (max-width: 767px) {
  .about-us-container .container-swiper  .swiper-pagination.swiper-pagination-bullets {
   position: static;
-  margin-right: 105px;
+  top: 0;
  }
 }
  
