@@ -1,12 +1,12 @@
-
-
-
+import axios from 'axios';
+import Swal from 'sweetalert2'
 
 
 const backdrop = document.querySelector('.pet-modal-overlay');
 const modalPet = document.querySelector('.pet-modal-window');
 const closeBtnPet = document.querySelector('.pet-modal-close-btn');
-const takeBtn = document.querySelector('.take-btn');
+const contentPet = document.querySelector('.pet-modal-content');
+
 
 
 let escListener = null;
@@ -14,32 +14,55 @@ let outsideClickListener = null;
 
 
 
+// Запит на сервер
+async function getAnimalById(id) {
+  const url = `https://paw-hut.b.goit.study/api/animals/${id}`;
+
+  const res = await axios.get(url);
+  return res.data;
+}
+
+
 // Відкрити модальне вікно Animals
 
-async function openPetModal(PetId) {
-  if (!PetId) return console.error('Animal ID is missing!');
+export async function openPetModal(PetId) {
  
-if (backdrop.classList.contains('is-open')) return;
-// loader
+if (!PetId) return console.error('Animal ID is missing!');
+    
+ if (backdrop.classList.contains('is-open')) return;
 
-//   const animal = await getAnimalById(PetId);
+try {
+    showLoader();
+const animal = await getAnimalById(PetId);
 
-  renderPetModal (animal);
+renderPetModal (animal);
 
  
 backdrop.classList.add('is-open');
 document.body.classList.add('no-scroll');
 addEventListeners();
-  }
 
+} catch (error) {
+    console.error('Failed to load animal:', error);
+    Swal.fire({
+  icon: 'error',
+  title: 'Помилка',
+  text: 'Не вдалося завантажити інформацію про тваринку',
+});
+}finally
+{
+    hideLoader();
+}
+;
+}
 
 
   // Закриття модального вікна
 function closePetModal() {
  backdrop.classList.remove('is-open');
 document.body.classList.remove('no-scroll');
-//   document.body.style.overflow = '';
   removeEventListeners();
+  contentPet.innerHTML = '';
 }
 
 // Слухачі подій
@@ -79,7 +102,11 @@ contentPet.addEventListener('click', e => {
 function renderPetModal(animal) {
   const markup = `
   
-<img src="${animal.imgURL}" alt="${animal.name}" class="pet-modal-img">
+<img 
+  src="${animal.imgURL}" 
+  srcset="${animal.imgURL} 1x, ${animal.imgURL2x} 2x"
+  alt="${animal.name}" 
+  class="pet-modal-img">
 
 <div class="pet-modal-info">
 
@@ -89,7 +116,7 @@ function renderPetModal(animal) {
 
 <div class="pet-modal-meta">
 <p class="pet-modal-age">${animal.age}</p>
-<p class="pet-modal-gender">${animal.gender}</p>
+<p class="pet-modal-gender">${animal.sex}</p>
 </div>
 
 <ul class="pet-modal-list">
@@ -118,3 +145,4 @@ function renderPetModal(animal) {
 
   contentPet.innerHTML = markup;
 }
+
