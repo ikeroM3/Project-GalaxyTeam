@@ -6,7 +6,17 @@ const categoriesContainer = document.querySelector('.categories-list');
 const loaderElement = document.querySelector('.loader');
 
 let page = 1;
-const limit = 9;
+
+const limit = getLimit();
+
+function getLimit() {
+  var width = window.innerWidth;
+  if (width >= 1440) {
+    return 9;
+  } else {
+    return 8;
+  }
+}
 
 let currentCategoryId = '';
 let totalItems = 0;
