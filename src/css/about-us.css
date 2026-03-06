@@ -160,7 +160,7 @@
 .swiper-btn:hover,
 .swiper-btn:focus {
   border-color: rgba(2, 6, 10, 0.6);
-  transition: bosder-color 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: border-color 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 .swiper-btn:active {
   box-shadow:
