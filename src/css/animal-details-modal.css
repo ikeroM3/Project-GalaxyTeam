@@ -16,22 +16,15 @@
   pointer-events: none;
   }
 
-
-  .pet-modal-overlay{
-position: fixed;
-inset: 0;
-  background: var(--overlay-bg);
-  backdrop-filter: blur(10px);
-  z-index: 1000;
+.pet-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(46,47,66,0.4);
   display: flex;
   justify-content: center;
   align-items: center;
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-/* transition: 0.3s, border 0.3s, color 0.3s; */
-  }
-
+  overflow-y: auto;
+}
 
 .pet-modal-overlay.is-open {
   opacity: 1;
@@ -42,17 +35,12 @@ inset: 0;
   .pet-modal-window {
  position: relative;
   background: var(--color-scheme-1-background);
-  border-radius: 8px;
   padding: 64px 20px;
   width: 100%;
-max-width: 335px;
-  height: auto;
- max-height: 90vh;
+  height: 100%;
+  overflow: hidden;
   transform: scale(0.95);
   transition: transform 0.3s ease;
-  outline: 2px solid red;
-  display: flex;
-  flex-direction: column;
   box-shadow: 0 20px 60px rgba(0,0,0,0.2);
   }
 
@@ -60,12 +48,19 @@ max-width: 335px;
   transform: scale(1);
 } 
 
+.no-scroll {
+  overflow: hidden;
+}
+
+
 .pet-modal-content {
   display: flex;
   flex-direction: column;
-  gap: 24px;
   overflow-y: auto;
 }
+
+
+/* CLOSE BTN */
 
   .pet-modal-close-btn {
  position: absolute;
@@ -98,30 +93,25 @@ fill: var(--color-scheme-1-text);
 }
 
 
-
-.no-scroll {
-  overflow: hidden;
-}
-
-
+/* ЗОБРАЖЕННЯ */
 
 .pet-modal-img {
 display: block;
   width: 100%;
-  max-width: 295px;
-aspect-ratio: 1 / 1;
-object-fit: cover;
-  height: 295px;
- border-radius: 8px;
+  max-width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 8px;
  background-size: cover;
  margin-bottom: 32px;
 }
 
+
+/* ТЕКСТОВИЙ КОНТЕНТ */
 .pet-modal-info {
-overflow-y: auto;
 display: flex;
 flex-direction: column;
-  gap: 24px;
+gap: 24px;
 }
 
 .pet-modal-data {
@@ -172,8 +162,7 @@ color: var(--color-scheme-1-text);
 display: flex;
 flex-direction: column;
 gap: 24px;
-margin-top: 32px;
-width: 295px;
+width: 100%;
 
 }
 
@@ -199,6 +188,9 @@ font-size: 14px;
 line-height: 150%;
 color: var(--color-scheme-1-text);
 }
+
+
+/* КНОПКА ВЗЯТИ ДОДОМУ */
 
 .take-btn {
  width: 100%;
@@ -236,11 +228,81 @@ background: var(--color-mariner-light);
 }
 
 
-
-@media (min-width: 768px) {
   /* tablet */
+
+@media only screen and (min-width: 768px) {
+.pet-modal-window {
+width: 704px;
+height: auto;
+border-radius: 8px;
+padding: 64px 32px;
+    }
+.pet-modal-content {
+flex-direction: row;
+gap: 24px;
+  }
+
+.pet-modal-img {
+ max-width: 280px;
+margin-bottom: 0;
+  }
+.pet-modal-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
-@media (min-width: 1440px) {
+.pet-modal-data {
+  order: 1;
+}
+
+.take-btn {
+  order: 2;
+}
+
+.pet-modal-list {
+  order: 3;
+}
+
+
+
+}
   /* desktop */
+
+@media only screen and (min-width: 1440px) {
+  .pet-modal-window {
+ width: 1312px;
+ padding: 64px;
+}
+.pet-modal-data {
+  order: 1;
+}
+
+.pet-modal-list {
+  order: 2;
+}
+
+.take-btn {
+  order: 3;
+width:100%;
+max-width:576px;
+margin-top:auto;
+}
+
+.pet-modal-img{
+max-height: 405px;
+max-width: 576px;
+object-fit:cover;
+flex-shrink:0;
+}
+
+.pet-modal-content{
+display:flex;
+gap: 24px;
+align-items:flex-start;
+
+}
+.pet-modal-info {
+ max-width: 576px;   
+}
 }

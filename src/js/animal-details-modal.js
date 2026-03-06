@@ -110,6 +110,7 @@ function renderPetModal(animal) {
 
 <div class="pet-modal-info">
 
+<div class="pet-modal-data">
 <p class="pet-modal-species">${animal.species}</p>
 
 <h3 class="pet-modal-name">${animal.name}</h3>
@@ -118,7 +119,7 @@ function renderPetModal(animal) {
 <p class="pet-modal-age">${animal.age}</p>
 <p class="pet-modal-gender">${animal.sex}</p>
 </div>
-
+</div>
 <ul class="pet-modal-list">
 
 <li class="pet-modal-item">
