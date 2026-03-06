@@ -179,6 +179,7 @@
   color: var(--color-neutral-darkest);
   display: flex;
   flex-wrap: wrap;
+  align-content: center;
   background: var(--opacity-neutral-darkest-5);
   border: 1px solid var(--opacity-transparent);
   border-radius: 100px;
