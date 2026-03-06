@@ -1,6 +1,4 @@
-import axios from 'axios';
-import Swal from 'sweetalert2'
-// import {openModalWindow} from '/order-modal.js' //import open modal
+import {openModalWindow} from '/order-modal.js'
 
 const backdrop = document.querySelector('.pet-modal-overlay');
 const modalPet = document.querySelector('.pet-modal-window');
@@ -13,48 +11,16 @@ let escListener = null;
 let outsideClickListener = null;
 
 
-
-// Запит на сервер
-async function getAnimalById(id) {
-  const url = `https://paw-hut.b.goit.study/api/animals/${id}`;
-
-  const res = await axios.get(url);
-  return res.data;
-}
-
-
 // Відкрити модальне вікно Animals
-
-export async function openPetModal(PetId) {
- 
-if (!PetId) return console.error('Animal ID is missing!');
-    
- if (backdrop.classList.contains('is-open')) return;
-
-try {
-    showLoader();
-const animal = await getAnimalById(PetId);
-
-renderPetModal (animal);
-
- 
-backdrop.classList.add('is-open');
-document.body.classList.add('no-scroll');
-addEventListeners();
-
-} catch (error) {
-    console.error('Failed to load animal:', error);
-    Swal.fire({
-  icon: 'error',
-  title: 'Помилка',
-  text: 'Не вдалося завантажити інформацію про тваринку',
-});
-}finally
-{
-    hideLoader();
+export function openPetModal(animal) {
+  if (!animal) return console.error('Animal object is missing!');
+  renderPetModal(animal);
+  backdrop.classList.remove('visually-hidden');
+  backdrop.classList.add('is-open');
+  document.body.classList.add('no-scroll');
+  addEventListeners();
 }
-;
-}
+
 
 
   // Закриття модального вікна
@@ -88,8 +54,7 @@ function removeEventListeners() {
 contentPet.addEventListener('click', e => {
   if (e.target.classList.contains('take-btn')) {
     closePetModal();
-    // openModalWindow(id); 
-    // модалка Святослава + відкриття модалки js
+   openModalWindow ();
   }
 });
 
