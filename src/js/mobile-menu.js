@@ -2,7 +2,7 @@ const modalWindow = document.querySelector('.mobile-menu');
 const menuBtnOpen = document.querySelector('.burger-menu.bth-open');
 const menuBtnClose = document.querySelector('.mobile-menu .close-btn');
 const menuLinks = document.querySelectorAll('.mob-menu-link, .mob-menu-button');
-const listLinks = document.querySelectorAll('.list-mob');
+const listLinks = document.querySelectorAll('.list-mob, .mob-menu');
 
 
 const toggleMenu = () => modalWindow.classList.toggle('is-open');
