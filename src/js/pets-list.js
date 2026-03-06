@@ -1,5 +1,5 @@
 import axios from 'axios';
-// import { openPetModal } from './animal-details-modal.js';
+import { openPetModal } from './animal-details-modal.js';
 
 const galleryElement = document.querySelector('.pets-list');
 const loadMoreButton = document.querySelector('.loadmore-btn');
@@ -19,6 +19,7 @@ function getLimit() {
   }
 }
 
+let animalsList = [];
 let currentCategoryId = '';
 let totalItems = 0;
 
@@ -72,6 +73,7 @@ const loadAnimals = async () => {
     );
 
     const data = response.data;
+    animalsList = [...animalsList, ...data.animals];
     totalItems = data.totalItems;
 
     if (data.animals.length === 0) {
@@ -152,12 +154,12 @@ loadAnimals();
 
 loadMoreButton.addEventListener('click', loadAnimals);
 
-// galleryElement.addEventListener('click', e => {
-//   if (e.target.classList.contains('show-info-btn')) {
-//     const card = e.target.closest('.pets-list-item');
-//     const id = card?.dataset.animalId;
-//     if (id) {
-//       openPetModal(id);
-//     }
-//   }
-// });
+galleryElement.addEventListener('click', e => {
+  if (e.target.classList.contains('show-info-btn')) {
+    const card = e.target.closest('.pets-list-item');
+    const animal = animalsList.find(a => a._id === card.dataset.animalId);
+    if (animal) {
+      openPetModal(animal);
+    }
+  }
+});

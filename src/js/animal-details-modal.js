@@ -1,5 +1,5 @@
-import axios from 'axios';
-import Swal from 'sweetalert2'
+// import axios from 'axios';
+import Swal from 'sweetalert2';
 // import {openModalWindow} from '/order-modal.js' //import open modal
 
 const backdrop = document.querySelector('.pet-modal-overlay');
@@ -7,60 +7,59 @@ const modalPet = document.querySelector('.pet-modal-window');
 const closeBtnPet = document.querySelector('.pet-modal-close-btn');
 const contentPet = document.querySelector('.pet-modal-content');
 
-
-
 let escListener = null;
 let outsideClickListener = null;
 
+// // Запит на сервер
+// async function getAnimalById(id) {
+//   const url = `https://paw-hut.b.goit.study/api/animals/${id}`;
 
-
-// Запит на сервер
-async function getAnimalById(id) {
-  const url = `https://paw-hut.b.goit.study/api/animals/${id}`;
-
-  const res = await axios.get(url);
-  return res.data;
-}
-
+//   const res = await axios.get(url);
+//   return res.data;
+// }
 
 // Відкрити модальне вікно Animals
 
-export async function openPetModal(PetId) {
- 
-if (!PetId) return console.error('Animal ID is missing!');
-    
- if (backdrop.classList.contains('is-open')) return;
+// export async function openPetModal(PetId) {
+//   if (!PetId) return console.error('Animal ID is missing!');
 
-try {
-    showLoader();
-const animal = await getAnimalById(PetId);
+//   if (backdrop.classList.contains('is-open')) return;
 
-renderPetModal (animal);
+//   try {
+//     showLoader();
+//     const animal = await getAnimalById(PetId);
 
- 
-backdrop.classList.add('is-open');
-document.body.classList.add('no-scroll');
-addEventListeners();
+//     renderPetModal(animal);
 
-} catch (error) {
-    console.error('Failed to load animal:', error);
-    Swal.fire({
-  icon: 'error',
-  title: 'Помилка',
-  text: 'Не вдалося завантажити інформацію про тваринку',
-});
-}finally
-{
-    hideLoader();
+//     backdrop.classList.add('is-open');
+//     document.body.classList.add('no-scroll');
+//     addEventListeners();
+//   } catch (error) {
+//     console.error('Failed to load animal:', error);
+//     Swal.fire({
+//       icon: 'error',
+//       title: 'Помилка',
+//       text: 'Не вдалося завантажити інформацію про тваринку',
+//     });
+//   } finally {
+//     hideLoader();
+//   }
+// }
+
+// Изменить на єто!!!!!
+export function openPetModal(animal) {
+  if (!animal) return console.error('Animal object is missing!');
+  renderPetModal(animal);
+  backdrop.classList.remove('visually-hidden');
+  backdrop.classList.add('is-open');
+  document.body.classList.add('no-scroll');
+  addEventListeners();
 }
-;
-}
 
-
-  // Закриття модального вікна
+// Закриття модального вікна
 function closePetModal() {
- backdrop.classList.remove('is-open');
-document.body.classList.remove('no-scroll');
+  backdrop.classList.remove('is-open');
+  document.body.classList.remove('no-scroll');
   removeEventListeners();
   contentPet.innerHTML = '';
 }
@@ -68,37 +67,44 @@ document.body.classList.remove('no-scroll');
 // Слухачі подій
 function addEventListeners() {
   if (!escListener) {
-    escListener = (e) => { if (e.key === 'Escape') closePetModal(); };
+    escListener = e => {
+      if (e.key === 'Escape') closePetModal();
+    };
     document.addEventListener('keydown', escListener);
   }
 
   if (!outsideClickListener) {
-    outsideClickListener = (e) => { if (e.target === backdrop) closePetModal(); };
+    outsideClickListener = e => {
+      if (e.target === backdrop) closePetModal();
+    };
     backdrop.addEventListener('click', outsideClickListener);
   }
 }
 
 function removeEventListeners() {
-  if (escListener) { document.removeEventListener('keydown', escListener); escListener = null; }
-  if (outsideClickListener) { backdrop.removeEventListener('click', outsideClickListener); outsideClickListener = null; }
+  if (escListener) {
+    document.removeEventListener('keydown', escListener);
+    escListener = null;
+  }
+  if (outsideClickListener) {
+    backdrop.removeEventListener('click', outsideClickListener);
+    outsideClickListener = null;
+  }
 }
-
 
 // Кнопка "Взяти додому"
 contentPet.addEventListener('click', e => {
   if (e.target.classList.contains('take-btn')) {
     closePetModal();
-    // openModalWindow(id); 
+    // openModalWindow(id);
     // модалка Святослава + відкриття модалки js
   }
 });
 
+//Кнопка закриття
+closeBtnPet.addEventListener('click', closePetModal);
 
- //Кнопка закриття
-    closeBtnPet.addEventListener('click', closePetModal);
-
-
- //Рендер 
+//Рендер
 
 function renderPetModal(animal) {
   const markup = `
@@ -147,4 +153,3 @@ function renderPetModal(animal) {
 
   contentPet.innerHTML = markup;
 }
-
