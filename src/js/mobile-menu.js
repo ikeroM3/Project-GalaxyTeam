@@ -3,7 +3,7 @@ const menuBtnOpen = document.querySelector('.burger-menu.bth-open');
 const menuBtnClose = document.querySelector('.mobile-menu .close-btn');
 const menuLinks = document.querySelectorAll('.mob-menu-link, .mob-menu-button');
 const listLinks = document.querySelectorAll('.list-mob');
-console.log(listLinks);
+
 
 const toggleMenu = () => modalWindow.classList.toggle('is-open');
 const toggleScroll = () => document.body.classList.toggle('is-scroll-disabled');
