@@ -23,16 +23,5 @@ const swiper = new Swiper('.swiper', {
     prevEl: '.swiper-button-prev',
     addIcons: false,
     disabledClass: 'swiper-btn-disabled',
-    breakpoints: {
-      768: {
-        slidesPerView: 1,
-        spaceBetween: 24,
-      },
-
-      1440: {
-        slidesPerView: 1,
-        spaceBetween: 30,
-      },
-    },
   },
 });

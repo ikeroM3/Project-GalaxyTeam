@@ -39,7 +39,6 @@
 .swiper {
   width: 100%;
   height: 100%;
-  overflow: hidden;
 }
 .swiper .swiper-slide {
   position: relative;
@@ -70,7 +69,7 @@
   object-fit: cover;
 }
 @media only screen and (max-width: 767px) {
-  .swiper-slide img {
+  .dog {
     object-position: right;
   }
 }
@@ -86,8 +85,9 @@
   left: 20px;
 }
 @media only screen and (min-width: 768px) {
-  .swiper-text {
-    width: 548px;
+  .swiper-text,
+  .dog-text {
+    min-width: 548px;
     bottom: 32px;
     left: 32px;
   }
