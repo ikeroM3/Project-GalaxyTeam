@@ -110,8 +110,7 @@ function renderPetModal(animal) {
   const markup = `
   
 <img 
-  src="${animal.imgURL}" 
-  srcset="${animal.imgURL} 1x, ${animal.imgURL2x} 2x"
+  src="${animal.image}" 
   alt="${animal.name}" 
   class="pet-modal-img">
 
