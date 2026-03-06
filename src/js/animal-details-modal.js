@@ -1,7 +1,6 @@
 import axios from 'axios';
 import Swal from 'sweetalert2'
-import { openModalWindow } from './order-modal.js';
-
+// import {openModalWindow} from '/order-modal.js' //import open modal
 
 const backdrop = document.querySelector('.pet-modal-overlay');
 const modalPet = document.querySelector('.pet-modal-window');
@@ -12,12 +11,11 @@ const contentPet = document.querySelector('.pet-modal-content');
 
 let escListener = null;
 let outsideClickListener = null;
-let currentAnimalId = null;
+
 
 
 // Запит на сервер
-export async function getAnimalById (id) {
-   
+async function getAnimalById(id) {
   const url = `https://paw-hut.b.goit.study/api/animals/${id}`;
 
   const res = await axios.get(url);
@@ -25,22 +23,16 @@ export async function getAnimalById (id) {
 }
 
 
-
-
-
 // Відкрити модальне вікно Animals
 
 export async function openPetModal(PetId) {
-    console.log("openPetModal called:", PetId);
  
 if (!PetId) return console.error('Animal ID is missing!');
     
  if (backdrop.classList.contains('is-open')) return;
 
 try {
-    // showLoader();
-
-  currentAnimalId = PetId;    
+    showLoader();
 const animal = await getAnimalById(PetId);
 
 renderPetModal (animal);
@@ -59,7 +51,7 @@ addEventListeners();
 });
 }finally
 {
-    // hideLoader();
+    hideLoader();
 }
 ;
 }
@@ -96,7 +88,8 @@ function removeEventListeners() {
 contentPet.addEventListener('click', e => {
   if (e.target.classList.contains('take-btn')) {
     closePetModal();
-    openModalWindow(currentAnimalId);
+    // openModalWindow(id); 
+    // модалка Святослава + відкриття модалки js
   }
 });
 
@@ -111,8 +104,7 @@ function renderPetModal(animal) {
   const markup = `
   
 <img 
-  src="${animal.imgURL}" 
-  srcset="${animal.imgURL} 1x, ${animal.imgURL2x} 2x"
+  src="${animal.image}" 
   alt="${animal.name}" 
   class="pet-modal-img">
 
@@ -125,7 +117,7 @@ function renderPetModal(animal) {
 
 <div class="pet-modal-meta">
 <p class="pet-modal-age">${animal.age}</p>
-<p class="pet-modal-gender">${animal.sex}</p>
+<p class="pet-modal-gender">${animal.gender}</p>
 </div>
 </div>
 <ul class="pet-modal-list">
@@ -154,4 +146,3 @@ function renderPetModal(animal) {
 
   contentPet.innerHTML = markup;
 }
-
