@@ -23,8 +23,8 @@ let animalsList = [];
 let currentCategoryId = '';
 let totalItems = 0;
 
-const showLoader = () => loaderElement?.classList.remove('hidden');
-const hideLoader = () => loaderElement?.classList.add('hidden');
+const showLoader = () => loaderElement?.classList.remove('visually-hidden');
+const hideLoader = () => loaderElement?.classList.add('visually-hidden');
 
 const createAnimalCardMarkup = animal => {
   const categoriesMarkup = animal.categories
