@@ -16,7 +16,8 @@ import 'swiper/css/pagination';
         clickable: true,
         type: 'bullets',
         bulletActiveClass:"swiper-pagination-bullet-active",
-        dynamicBullets: true,
+       dynamicBullets: true,
+
       },
       navigation: {
         nextEl: ".swiper-button-next",
