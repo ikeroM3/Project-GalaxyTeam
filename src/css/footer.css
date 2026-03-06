@@ -1,0 +1,138 @@
+.footer {
+  background-color: #cbb79e;
+  padding: 64px 0;
+}
+
+.footer-logo {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.footer-logo-icon {
+  display: inline-block;
+  max-width: 100%;
+  height: auto;
+}
+
+.footer-nav {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 32px;
+  flex-wrap: wrap;
+}
+
+.footer-nav-link {
+  position: relative;
+  display: inline-block;
+  font-size: 16px;
+  padding: 8px 0;
+  text-decoration: none;
+  color: #000;
+  transition: color 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.footer-nav-link:hover,
+.footer-nav-link:focus {
+  color: #443b2e;
+}
+
+.footer-nav-link:active {
+  color: #88765c;
+}
+
+.footer-nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: #88765c;
+  border-radius: 2px;
+  transition: width 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.footer-nav-link:hover::after,
+.footer-nav-link:focus::after {
+  width: 100%;
+}
+
+.footer-nav-link:focus-visible {
+  outline: 2px solid #443b2e;
+  outline-offset: 4px;
+}
+
+.footer-social-list {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-social-item a {
+  display: inline-flex;
+  width: 32px;
+  height: 32px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 80px;
+}
+
+.footer-social-icon {
+  display: block;
+  width: 32px;
+  height: 32px;
+  fill: #02060a;
+  transition: transform 0.25s ease;
+}
+
+.footer-social-item a:hover .footer-social-icon,
+.footer-social-item a:focus .footer-social-icon {
+  transform: scale(1.33);
+}
+
+.footer-divider {
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.2);
+  margin-bottom: 32px;
+  width: 100%;
+}
+
+.footer-copy {
+  font-size: 14px;
+  text-align: center;
+}
+
+@media only screen and (min-width: 768px) {
+  .footer {
+    padding: 64px 0;
+  }
+
+  .footer-nav {
+    gap: 48px;
+    margin-bottom: 40px;
+  }
+
+  .footer-social-item a {
+    margin-bottom: 96px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .footer {
+    padding: 80px 0;
+  }
+
+  .footer-nav {
+    gap: 64px;
+  }
+
+  .footer-social-item a {
+    margin-bottom: 112px;
+  }
+}
