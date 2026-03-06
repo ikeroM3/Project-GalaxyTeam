@@ -362,13 +362,13 @@
             <div class="modal-field">
                 <label class="modal-label" for="name">Ім’я*</label>
                 <input type="text" id="name" class="modal-input" placeholder="Андрій" required>
-                <span class="error-message">Error text</span>
+                <span class="error-message"></span>
             </div>
             
             <div class="modal-field">
                 <label class="modal-label" for="phone">Телефон*</label>
-                <input type="tel" id="phone" class="modal-input" placeholder="380955559922" required pattern="\d+">
-                <span class="error-message">Error text</span>
+                <input type="tel" id="phone" class="modal-input" placeholder="380955559922" required pattern="\d{12}">
+                <span class="error-message">Введіть номер формату: +380955559922</span>
             </div>
 
             <div class="modal-field">
