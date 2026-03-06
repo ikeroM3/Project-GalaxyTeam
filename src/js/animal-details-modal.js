@@ -1,6 +1,6 @@
 import axios from 'axios';
 import Swal from 'sweetalert2'
-
+import {openModalWindow} from '/order-modal.js' //import open modal
 
 const backdrop = document.querySelector('.pet-modal-overlay');
 const modalPet = document.querySelector('.pet-modal-window');
@@ -88,7 +88,8 @@ function removeEventListeners() {
 contentPet.addEventListener('click', e => {
   if (e.target.classList.contains('take-btn')) {
     closePetModal();
-    // openModal();   модалка Святослава
+    openModalWindow(id); 
+    // модалка Святослава + відкриття модалки js
   }
 });
 
