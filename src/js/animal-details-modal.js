@@ -1,4 +1,4 @@
-import {openModalWindow} from '/order-modal.js'
+import {openModalWindow} from './order-modal.js'
 
 const backdrop = document.querySelector('.pet-modal-overlay');
 const modalPet = document.querySelector('.pet-modal-window');
