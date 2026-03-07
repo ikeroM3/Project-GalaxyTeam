@@ -1,12 +1,10 @@
 import Swiper from 'swiper';
 import { Navigation, Pagination, Keyboard } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+
 import axios from 'axios';
 import 'css-star-rating/css/star-rating.css';
 
-const swiperMarkup = document.querySelector('.swiper');
+const swiperMarkup = document.querySelector('.swiper-wrapper');
 
 export function createReviews(reviews) {
   const markup = reviews
@@ -16,7 +14,7 @@ export function createReviews(reviews) {
         <div class="review-card-slide">
         <div class="rating star-icon value-${Math.floor(rate)} ${rate % 1 === 0.5 ? 'half' : ''}">
       <div class="star-container">
-        ${'<div class="star"><i class="star-empty"></i><i class="star-half"></i><i class="star-filled"></i></div>'.repeat(5)}
+        ${'<div class="star"><svg class="star-empty"><use xlink:href="#star-empty"></use></svg><svg class="star-half"><use xlink:href="#star-half"></use></svg><svg class="star-filled"><use xlink:href="#star-filled"></use></svg></div>'.repeat(5)}
       </div>
     </div>
         <p class="review-card-text">${description}</p>
@@ -35,7 +33,6 @@ async function fetchReviews() {
   const { data } = await axios.get('/api/feedbacks');
   return data.feedbacks;
 }
-
 try {
   const reviews = await fetchReviews();
   console.log(reviews);
@@ -60,6 +57,12 @@ try {
       prevEl: '.swiper-button-prev',
       addIcons: false,
       disabledClass: 'swiper-btn-disabled',
+    },
+    breakpoints: {
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 30,
+      },
     },
   });
 } catch (error) {
