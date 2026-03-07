@@ -220,6 +220,12 @@
   margin-bottom: 4px;
 }
 
+@media (min-width: 768px) {
+  .categories-box {
+    min-height: 58px;
+  }
+}
+
 .age-gender {
   display: flex;
   gap: 16px;
@@ -229,6 +235,12 @@
 .info-text {
   font-size: 12px;
   width: 100%;
+}
+
+@media (min-width: 768px) {
+  .info-text {
+    min-height: 38px;
+  }
 }
 
 @media (min-width: 1440px) {
