@@ -10,7 +10,7 @@ let outsideClickListener = null;
 
 export function openPetModal(animal) {
   if (!animal) return;
-  renderPetModal(content, animal); // <-- передаем контейнер
+  renderPetModal(content, animal);
   backdrop.classList.remove('visually-hidden');
   backdrop.classList.add('is-open');
   document.body.classList.add('no-scroll');
