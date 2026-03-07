@@ -17,3 +17,8 @@
 @import url('./animal-details-modal.css');
 @import url('./loader.css');
 @import url('./mobile-menu.css');
+
+/* swiper styles */
+@import 'swiper/css';
+@import 'swiper/css/navigation';
+@import 'swiper/css/pagination';

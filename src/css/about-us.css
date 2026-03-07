@@ -1,208 +1,215 @@
+/* =============================================
+   ABOUT US SECTION
+   ============================================= */
 
 .about-us-container {
-    padding-top: 64px;
-    padding-bottom: 64px;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    align-items: flex-end;
-    
-    
-}
-@media only screen and (min-width: 768px) {
-  .about-us-container {
-    display: flex;
-    align-items: center;
-  }
-}
-@media only screen and (min-width: 1440px) {
- .about-us-container {
-    padding-top: 80px;
-    padding-bottom: 80px;
-}
-}
-.about-us-title {
-    max-width: 768px;
-    text-align: center;
-    margin-bottom: 40px;
-    font-size: 36px;
-    line-height: 1.2;
-    letter-spacing: -0.01em;
-}
-@media only screen and (min-width: 768px) {
-  .about-us-title  {
-    width: 704px;
-  }
-}
-@media only screen and (min-width: 1440px) {
-  .about-us-title  {
-    font-size: 48px;
-  }
-}
- .swiper {
-      width: 100%;
-      height: 100%;
-      
-    }
-    .swiper .swiper-slide {
-      position: relative;
-      text-align: center;
-      height: 402px;
-      font-size: 18px;
-      background: #444;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-bottom: 24px;
-    }
-     @media only screen and (min-width: 768px) {
-       .swiper .swiper-slide{
-        height: 404px;
-      }
-    }
-      @media only screen and (min-width: 1440px) {
-       .swiper .swiper-slide{
-        height: 753px;
-        margin-bottom: 48px;
-      }
-    }
-    picture{
-      
-      display: block;
-      min-width: 335px;
-    }
-    .swiper-slide img{
-       display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;  
-    }
- 
- .swiper-text {
-max-width: 295px;
-font-size: 16px;
-font-weight: 400;
-color: var(--color-scheme-1-background);
-text-align: start;
-position: absolute;
-z-index: 100;
-bottom: 20px;
-left: 20px;
-}
-@media only screen and (min-width: 768px) {
- .swiper-text  {
-  min-width: 548px;
-    bottom: 32px;
-    left: 32px;
-  }
-}
-@media only screen and (min-width: 1440px) {
-  .swiper-text  { 
-    font-size: 18px;
-    bottom: 64px;
-    left: 64px;
-  }
+  padding-top: 64px;
+  padding-bottom: 64px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: flex-end;
 }
 
-.about-us-container .container-swiper{
+.about-us-title {
+  max-width: 768px;
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 36px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+/* ===== SWIPER — уточнено через .swiper-about ===== */
+
+.swiper-about {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-about .swiper-slide {
+  position: relative;
+  text-align: center;
+  height: 402px;
+  font-size: 18px;
+  background: #444;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.swiper-about picture {
+  display: block;
+  min-width: 335px;
+}
+
+.swiper-about .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ===== SWIPER TEXT ===== */
+
+.swiper-about .swiper-text {
+  max-width: 295px;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--color-scheme-1-background);
+  text-align: start;
+  position: absolute;
+  z-index: 100;
+  bottom: 20px;
+  left: 20px;
+}
+
+/* ===== CONTROLS ROW ===== */
+
+.about-us-container .container-swiper {
   height: 68px;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  
-  
 }
 
- @media only screen and (min-width: 768px) {
-   .about-us-container .container-swiper{
-  height: 28px;
-  }
- }
-
- .btn-wrapper{
+.about-us-container .btn-wrapper {
   display: flex;
   justify-content: flex-end;
   gap: 8px;
   padding-right: 8px;
- }
+}
 
-@media only screen and (max-width: 767px) {
- .about-us-container .container-swiper  .swiper-pagination.swiper-pagination-bullets {
+/* ===== PAGINATION ===== */
+
+.about-us-container .swiper-pagination-bullet-active {
+  background-color: black;
+}
+
+/* ===== NAVIGATION BUTTONS ===== */
+
+.about-us-container .swiper-btn {
   position: static;
-  transform: none;
-}
-}
- 
-@media only screen and (min-width: 768px) {
-   .about-us-container .swiper-pagination.swiper-pagination-bullets {
-    top: 87%;  
- }
-}
-@media only screen and (min-width: 1440px) {
- .about-us-container .swiper-pagination.swiper-pagination-bullets {
-    top: 91%;  
- }
+  border: 1px solid var(--color-mariner-light);
+  border-radius: 8px;
+  padding: 12px;
+  width: 48px;
+  height: 48px;
+  color: var(--color-scheme-1-text);
+  background: var(--color-scheme-1-foreground);
+  margin-top: 0;
 }
 
-.swiper-pagination .swiper-pagination-bullet-active{
-    background-color: black;
-  } 
-  .about-us-container .swiper-btn{
- position: static;
-border: 1px solid var(--color-mariner-light);
-border-radius: 8px;
-padding: 12px;
-width: 48px;
-height: 48px;
-color: var(--color-scheme-1-text);
-background: var(--color-scheme-1-foreground);
-margin-top: 0;
-}
-  
-.swiper-btn:hover,
-.swiper-btn:focus{
+.about-us-container .swiper-btn:hover,
+.about-us-container .swiper-btn:focus {
   border-color: rgba(2, 6, 10, 0.6);
   transition: border-color 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
-.swiper-btn:active{
-   box-shadow: inset 0 4px 6px -2px rgba(0, 0, 0, 0.03), inset 0 12px 16px -4px rgba(0, 0, 0, 0.08);
-   transition: box-shadow 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+.about-us-container .swiper-btn:active {
+  box-shadow:
+    inset 0 4px 6px -2px rgba(0, 0, 0, 0.03),
+    inset 0 12px 16px -4px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
-.swiper-btn-disabled{
+
+.about-us-container .swiper-btn-disabled {
   opacity: 0.4;
   border-color: var(--color-scheme-1-background);
-  transition: border-color 0.25s cubic-bezier(0.165, 0.84, 0.44, 1),
-  opacity 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition:
+    border-color 0.25s cubic-bezier(0.165, 0.84, 0.44, 1),
+    opacity 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-  @media only screen and (min-width: 768px) {
-    .about-us-container .swiper-button-next.swiper-btn {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      right: 3px;
-    }
-  }
-  
-  @media only screen and (min-width: 1440px) {
-    .about-us-container .swiper-button-next.swiper-btn {
-      right: 35px;
-    }
-  }
+/* ===== TABLET ===== */
 
 @media only screen and (min-width: 768px) {
-   .about-us-container .swiper-button-prev.swiper-btn {
+  .about-us-container {
+    align-items: center;
+  }
+
+  .about-us-title {
+    width: 704px;
+  }
+
+  .swiper-about .swiper-slide {
+    height: 404px;
+  }
+
+  .about-us-container .swiper-about .swiper-text {
+    min-width: 548px;
+    bottom: 32px;
+    left: 32px;
+  }
+
+  .about-us-container .container-swiper {
+    height: 28px;
+  }
+
+  /* пагінація на планшеті — абсолютна всередині свайпера */
+  .about-us-container .swiper-pagination.swiper-pagination-bullets {
+    top: 87%;
+  }
+
+  .about-us-container .swiper-button-next.swiper-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 3px;
+  }
+
+  .about-us-container .swiper-button-prev.swiper-btn {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     left: 3px;
   }
 }
- 
-  @media only screen and (min-width: 1440px) {
-   .about-us-container .swiper-button-prev.swiper-btn {
-    left: 35px;
+
+/* мобільна пагінація — статична */
+@media only screen and (max-width: 767px) {
+  .about-us-container
+    .container-swiper
+    .swiper-pagination.swiper-pagination-bullets {
+    position: static;
+    transform: none;
   }
 }
 
+/* ===== DESKTOP ===== */
+
+@media only screen and (min-width: 1440px) {
+  .about-us-container {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  .about-us-title {
+    font-size: 48px;
+  }
+
+  .swiper-about .swiper-slide {
+    height: 753px;
+    margin-bottom: 48px;
+  }
+
+  .about-us-container .swiper-about .swiper-text {
+    font-size: 18px;
+    bottom: 64px;
+    left: 64px;
+  }
+
+  .about-us-container .swiper-pagination.swiper-pagination-bullets {
+    top: 91%;
+  }
+
+  .about-us-container .swiper-button-next.swiper-btn {
+    right: 35px;
+  }
+
+  .about-us-container .swiper-button-prev.swiper-btn {
+    left: 35px;
+  }
+}
