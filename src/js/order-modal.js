@@ -1,45 +1,34 @@
-import axios from 'axios';
+import { createOrder } from './api.js';
 import Swal from 'sweetalert2';
 
 const modalWindow = document.querySelector('.backdrop');
-const closeButton = document.querySelector('.modal-close');
+const closeBtn = document.querySelector('.modal-close');
 const modalForm = document.querySelector('.modal-form');
 
-let currentAnimalID; //для прийому id тварини при відкритті модалки з описом
-
-//Закриття через кнопку modal-close
-closeButton.addEventListener('click', closeModalWindow);
-
-//Закриття через клік за межі вікна
-
-modalWindow.addEventListener('click', e => {
-  if (e.target === modalWindow) {
-    closeModalWindow();
-  }
-});
-
-// Закриття через ESCAPE
-
-function closeOnEscape(e) {
-  if (e.key === 'Escape') {
-    closeModalWindow();
-  }
-}
-
-function closeModalWindow() {
-  modalWindow.classList.add('visually-hidden');
-  document.removeEventListener('keydown', closeOnEscape);
-  document.body.style.overflow = '';
-}
+let currentAnimalID = null;
 
 export function openModalWindow(animalId) {
   currentAnimalID = animalId;
   modalWindow.classList.remove('visually-hidden');
-  document.addEventListener('keydown', closeOnEscape);
   document.body.style.overflow = 'hidden';
+  document.addEventListener('keydown', onEscape);
 }
 
-//сабміт форми та запит на сервер
+function closeModalWindow() {
+  modalWindow.classList.add('visually-hidden');
+  document.body.style.overflow = '';
+  document.removeEventListener('keydown', onEscape);
+}
+
+function onEscape(e) {
+  if (e.key === 'Escape') closeModalWindow();
+}
+
+closeBtn.addEventListener('click', closeModalWindow);
+modalWindow.addEventListener('click', e => {
+  if (e.target === modalWindow) closeModalWindow();
+});
+
 modalForm.addEventListener('submit', async e => {
   e.preventDefault();
   const { name, phone, comment } = e.target.elements;
@@ -50,21 +39,16 @@ modalForm.addEventListener('submit', async e => {
     comment: comment.value,
   };
   try {
-    const response = await axios.post(
-      'https://paw-hut.b.goit.study/api/orders',
-      formData
-    );
-    const orderData = response.data;
-
+    await createOrder(formData);
     Swal.fire({
       title: 'Success!',
       icon: 'success',
-      draggable: true,
       timer: 1000,
+      draggable: true,
     });
     e.target.reset();
     closeModalWindow();
-  } catch (error) {
+  } catch {
     Swal.fire({
       icon: 'error',
       title: 'Oops...',
