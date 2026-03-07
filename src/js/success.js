@@ -65,5 +65,6 @@ try {
     },
   });
 } catch (error) {
-  //Here will be an error message
+  console.error('API Error (createOrder):', error);
+  throw error;
 }

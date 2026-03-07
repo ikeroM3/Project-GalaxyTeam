@@ -1,0 +1,232 @@
+/* ЗАГАЛЬНІ СТИЛІ */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  background: #f3f3f3;
+}
+
+/* BACKDROP */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(46, 47, 66, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+/* MODAL */
+.modal {
+  position: relative;
+  width: 335px;
+  padding: 64px 20px;
+  background: #f6f4f1;
+  border-radius: 8px;
+}
+
+/* CLOSE BUTTON */
+.modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  background-color: transparent;
+  color: #02060a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.modal-close:hover {
+  border: 1px solid #88765c;
+  border-radius: 8px;
+  background: #eee9e3;
+}
+
+.modal-close:focus {
+  border: 1px solid #02060a;
+  border-radius: 8px;
+  background: #c3b49d;
+}
+
+/* TITLE */
+.modal-title {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 120%;
+  letter-spacing: -0.01em;
+  text-align: center;
+  color: #02060a;
+  margin-bottom: 48px;
+  max-width: 295px;
+}
+
+/* FORM FIELDS */
+.modal-field {
+  margin-bottom: 24px;
+}
+
+.modal-label {
+  display: block;
+  font-size: 14px;
+  line-height: 150%;
+  color: #02060a;
+  margin-bottom: 8px;
+}
+
+/* INPUT & TEXTAREA */
+.modal-input,
+.modal-textarea {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0);
+  padding: 8px 12px;
+  background: rgba(2, 6, 10, 0.05);
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.modal-input {
+  font-size: 14px;
+  line-height: 150%;
+  color: var(--opacity-neutral-darkest-60);
+}
+
+.modal-textarea {
+  height: 180px;
+  padding: 12px;
+  resize: none;
+  font-size: 14px;
+  line-height: 150%;
+  color: var(--opacity-neutral-darkest-60);
+}
+
+/* HOVER EFFECT */
+.modal-input:hover,
+.modal-textarea:hover {
+  border: 1px solid #88765c;
+}
+
+/* FOCUS EFFECT */
+.modal-input:focus,
+.modal-textarea:focus {
+  outline: none;
+  border: 1px solid #8b7a5f;
+  background: #fff;
+}
+
+/* SUBMIT BUTTON */
+.submit-btn {
+  width: 295px;
+  height: 45px;
+  margin-top: 24px;
+  border: 1px solid #88765c;
+  border-radius: 8px;
+  background: #88765c;
+  color: #fff;
+  cursor: pointer;
+  padding: 12px 24px;
+  transition:
+    background 0.3s,
+    color 0.3s,
+    border 0.3s,
+    border-radius 0.3s;
+}
+
+.submit-btn:hover {
+  border: 1px solid #88765c;
+  background: #eee9e3;
+  color: #88765c;
+}
+
+.submit-btn:focus {
+  border: 1px solid #02060a;
+  background: #c3b49d;
+  color: #02060a;
+  outline: none;
+}
+
+.error-message {
+  display: none;
+  color: #ed4337;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.modal-input:user-invalid {
+  border: 1px solid #ed4337 !important;
+  color: #ed4337;
+  background-color: #fff;
+}
+
+.modal-input:user-invalid + .error-message {
+  display: block;
+}
+
+.modal-input:user-invalid::placeholder {
+  color: rgba(237, 67, 55, 0.5);
+}
+
+/* --- TABLET --- */
+@media screen and (min-width: 768px) {
+  .modal {
+    width: 704px;
+    padding: 64px 32px;
+  }
+
+  .modal-title {
+    font-size: 36px;
+    white-space: nowrap;
+    text-align: center;
+    max-width: 640px;
+  }
+
+  .submit-btn {
+    width: 240px;
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+  }
+}
+
+/* --- DESKTOP --- */
+@media screen and (min-width: 1440px) {
+  .modal {
+    width: 768px;
+    padding: 64px;
+  }
+
+  .modal-title {
+    font-size: 48px;
+    white-space: normal;
+    word-wrap: break-word;
+    width: 100%;
+  }
+
+  .modal-label {
+    font-size: 16px;
+  }
+
+  .modal-input {
+    font-size: 16px;
+  }
+
+  .modal-textarea {
+    font-size: 16px;
+  }
+}
