@@ -35,7 +35,6 @@ async function fetchReviews() {
 }
 try {
   const reviews = await fetchReviews();
-  console.log(reviews);
   createReviews(reviews);
 
   const swiper = new Swiper('.swiper', {
