@@ -14,8 +14,8 @@ export const createAnimalCardMarkup = animal => {
           <p class="info-gender">${animal.gender}</p>
         </div>
         <p class="info-text">${animal.shortDescription}</p>
+        </div>
         <button class="show-info-btn">Дізнатись більше</button>
-      </div>
     </li>
   `;
 };
