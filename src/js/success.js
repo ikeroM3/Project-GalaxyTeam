@@ -2,6 +2,7 @@ import Swiper from 'swiper';
 import { Navigation, Pagination, Keyboard } from 'swiper/modules';
 import axios from 'axios';
 import 'css-star-rating/css/star-rating.css';
+import spriteUrl from '../img/icons.svg?url';
 
 const loader = document.querySelector('.success-loader');
 const showLoader = () => loader?.classList.remove('visually-hidden');
@@ -17,7 +18,7 @@ function createReviews(reviews) {
           <div class="review-card-slide">
             <div class="rating star-icon value-${Math.floor(rate)} ${rate % 1 === 0.5 ? 'half' : ''}">
               <div class="star-container">
-                ${'<div class="star"><svg class="star-empty"><use href="../img/icons.svg#star-empty"></use></svg><svg class="star-half"><use href="../img/icons.svg#star-half"></use></svg><svg class="star-filled"><use href="../img/icons.svg#star-filled"></use></svg></div>'.repeat(5)}
+                ${'<div class="star"><svg class="star-empty"><use :href="spriteUrl + '#star-empty'"></use></svg><svg class="star-half"><use :href="spriteUrl + '#star-half'"></use></svg><svg class="star-filled"><use :href="spriteUrl + '#star-empty'"></use></svg></div>'.repeat(5)}
               </div>
             </div>
             <p class="review-card-text">${description}</p>
