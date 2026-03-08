@@ -18,7 +18,7 @@ function createReviews(reviews) {
           <div class="review-card-slide">
             <div class="rating star-icon value-${Math.floor(rate)} ${rate % 1 === 0.5 ? 'half' : ''}">
               <div class="star-container">
-                ${'<div class="star"><svg class="star-empty"><use :href="spriteUrl + '#star-empty'"></use></svg><svg class="star-half"><use :href="spriteUrl + '#star-half'"></use></svg><svg class="star-filled"><use :href="spriteUrl + '#star-empty'"></use></svg></div>'.repeat(5)}
+                 ${'<div class="star"><svg class="star-empty"><use href="' + spriteUrl + '#star-empty"></use></svg><svg class="star-half"><use href="' + spriteUrl + '#star-half"></use></svg><svg class="star-filled"><use href="' + spriteUrl + '#star-filled"></use></svg></div>'.repeat(5)}
               </div>
             </div>
             <p class="review-card-text">${description}</p>
