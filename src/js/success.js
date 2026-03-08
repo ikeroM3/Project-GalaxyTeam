@@ -2,6 +2,11 @@ import Swiper from 'swiper';
 import { Navigation, Pagination, Keyboard } from 'swiper/modules';
 import axios from 'axios';
 import 'css-star-rating/css/star-rating.css';
+
+const loader = document.querySelector('.success-loader');
+const showLoader = () => loader?.classList.remove('visually-hidden');
+const hideLoader = () => loader?.classList.add('visually-hidden');
+
 const swiperMarkup = document.querySelector('.swiper-reviews .swiper-wrapper');
 function createReviews(reviews) {
   const markup = reviews
@@ -25,8 +30,11 @@ function createReviews(reviews) {
 axios.defaults.baseURL = 'https://paw-hut.b.goit.study/';
 async function fetchReviews() {
   const { data } = await axios.get('/api/feedbacks');
+
   return data.feedbacks;
 }
+showLoader();
+
 try {
   const reviews = await fetchReviews();
   createReviews(reviews);
@@ -40,13 +48,19 @@ try {
     pagination: {
       el: '.swiper-pagination-reviews',
       clickable: true,
-      type: 'bullets',
-      bulletActiveClass: 'swiper-pagination-bullet-active',
-      dynamicBullets: true,
+      renderBullet: function (index, className) {
+        return `
+      <span class="${className}">
+        <svg width="4" height="4" viewBox="0 0 4 4">
+          <circle cx="2" cy="2" r="2"></circle>
+        </svg>
+      </span>
+    `;
+      },
     },
     navigation: {
-      nextEl: '.swiper-nav-buttons .swiper-button-next',
-      prevEl: '.swiper-nav-buttons .swiper-button-prev',
+      nextEl: '.swiper-nav-buttons .swiper-button-next1',
+      prevEl: '.swiper-nav-buttons .swiper-button-prev1',
       addIcons: false,
       disabledClass: 'swiper-btn-disabled',
     },
@@ -59,4 +73,6 @@ try {
   });
 } catch (error) {
   console.error('API Error:', error);
+} finally {
+  hideLoader();
 }
