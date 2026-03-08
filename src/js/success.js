@@ -2,7 +2,7 @@ import Swiper from 'swiper';
 import { Navigation, Pagination, Keyboard } from 'swiper/modules';
 import axios from 'axios';
 import 'css-star-rating/css/star-rating.css';
-import spriteUrl from '../img/icons.svg?url';
+
 
 const loader = document.querySelector('.success-loader');
 const showLoader = () => loader?.classList.remove('visually-hidden');
@@ -19,9 +19,21 @@ function createReviews(reviews) {
             <div class="rating star-icon value-${Math.floor(rate)} ${rate % 1 === 0.5 ? 'half' : ''}">
               <div class="star-container">
                 ${`<div class="star">
-    <svg class="star-empty"><use href="${spriteUrl}#star-empty"></use></svg>
-    <svg class="star-half"><use href="${spriteUrl}#star-half"></use></svg>
-    <svg class="star-filled"><use href="${spriteUrl}#star-filled"></use></svg>
+    <svg class="star-empty">  <symbol id="star-empty" viewBox="0 0 34 32">
+          <path
+            d="M33.412 12.395l-11.842-1.021-4.628-10.904-4.628 10.92-11.842 1.005 8.993 7.791-2.701 11.579 10.179-6.144 10.179 6.144-2.685-11.579 8.976-7.791zM16.941 22.541l-6.193 3.739 1.647-7.049-5.468-4.744 7.214-0.626 2.8-6.638 2.816 6.654 7.214 0.626-5.468 4.744 1.647 7.049-6.209-3.755z"
+          />
+        </symbol></svg>
+    <svg class="star-half">  <symbol id="star-empty" viewBox="0 0 34 32">
+          <path
+            d="M33.412 12.395l-11.842-1.021-4.628-10.904-4.628 10.92-11.842 1.005 8.993 7.791-2.701 11.579 10.179-6.144 10.179 6.144-2.685-11.579 8.976-7.791zM16.941 22.541l-6.193 3.739 1.647-7.049-5.468-4.744 7.214-0.626 2.8-6.638 2.816 6.654 7.214 0.626-5.468 4.744 1.647 7.049-6.209-3.755z"
+          />
+        </symbol></svg>
+    <svg class="star-filled">  <symbol id="star-empty" viewBox="0 0 34 32">
+          <path
+            d="M33.412 12.395l-11.842-1.021-4.628-10.904-4.628 10.92-11.842 1.005 8.993 7.791-2.701 11.579 10.179-6.144 10.179 6.144-2.685-11.579 8.976-7.791zM16.941 22.541l-6.193 3.739 1.647-7.049-5.468-4.744 7.214-0.626 2.8-6.638 2.816 6.654 7.214 0.626-5.468 4.744 1.647 7.049-6.209-3.755z"
+          />
+        </symbol></svg>
 </div>`.repeat(5)}
               </div>
             </div>
