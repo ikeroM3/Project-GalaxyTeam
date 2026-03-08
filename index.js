@@ -49,7 +49,11 @@ import{a as m,S as x,A as G,b as B,N as O,P as T,K as j}from"./assets/vendor-DD8
           <div class="review-card-slide">
             <div class="rating star-icon value-${Math.floor(s)} ${s%1===.5?"half":""}">
               <div class="star-container">
-                 ${'<div class="star"><svg class="star-empty"><use href="'+$+'#star-empty"></use></svg><svg class="star-half"><use href="'+$+'#star-half"></use></svg><svg class="star-filled"><use href="'+$+'#star-filled"></use></svg></div>'.repeat(5)}
+                ${`<div class="star">
+    <svg class="star-empty"><use href="${$}#star-empty"></use></svg>
+    <svg class="star-half"><use href="${$}#star-half"></use></svg>
+    <svg class="star-filled"><use href="${$}#star-filled"></use></svg>
+</div>`.repeat(5)}
               </div>
             </div>
             <p class="review-card-text">${o}</p>
