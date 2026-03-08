@@ -22,17 +22,17 @@
 }
 
 .pet-modal-window {
- position: relative;
-  background: var(--color-scheme-1-background);
-  padding: 64px 20px;
-  width: 335px;
-  max-height: 100vh;
-  overflow: auto;
-  transform: scale(1);
-  transition: transform 0.3s ease;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.2);
-  border-radius: 8px;
-  }
+  position: relative;
+  background: var(--color-scheme-1-background);
+  padding: 64px 20px;
+  width: 335px;
+  max-height: 100vh;
+  overflow: auto;
+  transform: scale(1);
+  transition: transform 0.3s ease;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+  border-radius: 8px;
+}
 
 .pet-modal-overlay.is-open .pet-modal-window {
   transform: scale(1);
