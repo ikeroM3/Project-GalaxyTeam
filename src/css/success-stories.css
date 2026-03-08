@@ -1,6 +1,7 @@
 .reviews {
   padding: 64px 20px;
   background-color: #f6f4f1;
+  user-select: none;
 }
 
 .reviews-title {
@@ -12,6 +13,10 @@
   text-align: center;
   color: #02060a;
   margin-bottom: 24px;
+}
+
+.reviews .swiper-pagination.swiper-pagination-bullets-dynamic {
+  left: 30px !important;
 }
 
 .reviews-subtitle {
@@ -33,7 +38,7 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
-  padding: 24px 16px;
+  padding: 40px 0px;
   background-color: #f6f4f1;
   border-radius: 8px;
   height: 100%;
@@ -109,28 +114,15 @@
   align-items: center;
   justify-content: space-between;
   margin-top: 24px;
+  position: relative;
 }
 
 .reviews .swiper-nav-buttons {
   display: flex;
   gap: 12px;
+  margin-left: auto;
 }
 
-.reviews .swiper-controls .swiper-pagination.swiper-pagination-bullets {
-  position: static;
-  bottom: auto;
-  left: auto;
-  width: auto;
-  transform: none;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-.reviews .swiper-controls .swiper-pagination-reviews {
-  width: 20px;
-  height: 15px;
-  overflow: hidden;
-}
 .reviews .swiper-controls .swiper-pagination-bullet {
   width: 6px;
   height: 6px;
@@ -225,7 +217,7 @@
   }
 
   .review-card-slide {
-    padding: 32px 24px;
+    padding: 40px 0px;
   }
 }
 
@@ -243,24 +235,8 @@
   }
 
   .review-card-slide {
-    padding: 40px 32px;
+    padding: 40px 0px;
   }
-}
-
-.swiper-pagination-bullet {
-  width: 4px;
-  height: 4px;
-  opacity: 1;
-  background: transparent;
-}
-
-.swiper-pagination-bullet circle {
-  fill: var(--color-scheme-1-text);
-  opacity: 0.2;
-}
-
-.swiper-pagination-bullet-active circle {
-  opacity: 1;
 }
 
 .review-card-slide .rating .star svg,
@@ -312,6 +288,17 @@
     border-color 0.25s cubic-bezier(0.165, 0.84, 0.44, 1),
     opacity 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
-.swiper-pagination-bullet:nth-child(n + 6) {
-  display: none;
+
+.reviews .swiper-controls .swiper-pagination-bullet {
+  width: 6px;
+  height: 6px;
+}
+
+.reviews .swiper-controls .swiper-pagination-bullet-active {
+  transform: scale(1.5);
+}
+
+.swiper-pagination-bullets-dynamic {
+  overflow: hidden;
+  font-size: 8px !important;
 }

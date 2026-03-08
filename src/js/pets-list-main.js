@@ -9,7 +9,6 @@ const gallery = document.querySelector('.pets-list');
 const loadMoreBtn = document.querySelector('.loadmore-btn');
 const categoriesContainer = document.querySelector('.categories-list');
 const loader = document.querySelector('.loader');
-const loadmoreLoader = document.querySelector('.loadmore-loader');
 
 let page = 1;
 let limit = getLimit();
@@ -25,25 +24,12 @@ function getLimit() {
 const showLoader = () => loader?.classList.remove('visually-hidden');
 const hideLoader = () => loader?.classList.add('visually-hidden');
 
-const showLoadmoreLoader = () =>
-  loadmoreLoader?.classList.remove('visually-hidden');
-const hideloadmoreLoader = () =>
-  loadmoreLoader?.classList.add('visually-hidden');
-
 async function callApiWithLoader(apiFunction, params) {
-  if (loadmoreLoader) {
-    showLoadmoreLoader();
-  } else {
-    showLoader();
-  }
+  showLoader();
   try {
     return await apiFunction(params);
   } finally {
-    if (loadmoreLoader) {
-      hideloadmoreLoader();
-    } else {
-      hideLoader();
-    }
+    hideLoader();
   }
 }
 
@@ -70,9 +56,8 @@ const loadAnimals = async () => {
       return;
     }
     appendAnimalsToGallery(gallery, data.animals);
-    const shown = page * limit;
-
-    if (shown >= totalItems) {
+    page += 1;
+    if (page * limit >= totalItems) {
       loadMoreBtn.disabled = true;
       loadMoreBtn.textContent = 'Кінець';
     } else {
@@ -117,10 +102,7 @@ gallery.addEventListener('click', e => {
   }
 });
 
-loadMoreBtn.addEventListener('click', () => {
-  page += 1;
-  loadAnimals();
-});
+loadMoreBtn.addEventListener('click', loadAnimals);
 
 window.addEventListener('resize', () => {
   const newLimit = getLimit();
@@ -133,13 +115,3 @@ window.addEventListener('resize', () => {
 
 loadCategories();
 loadAnimals();
-
-const itemGallery = document.querySelector('.pets-list-item');
-
-if (itemGallery) {
-  const { height } = itemGallery.getBoundingClientRect();
-  window.scrollBy({
-    top: height * 2,
-    behavior: 'smooth',
-  });
-}

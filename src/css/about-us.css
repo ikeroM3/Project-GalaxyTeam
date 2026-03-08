@@ -5,6 +5,7 @@
   flex-direction: column;
   position: relative;
   align-items: flex-end;
+  user-select: none;
 }
 
 .about-us-title {
@@ -157,6 +158,9 @@
     .swiper-pagination.swiper-pagination-bullets {
     position: static;
     transform: none;
+  }
+  .swiper-pagination {
+    text-align: start !important;
   }
 }
 
