@@ -315,3 +315,8 @@
 .swiper-pagination-bullet:nth-child(n + 6) {
   display: none;
 }
+.star-half{
+fill: linear-gradient(90deg, #02060a 50%, rgba(2, 6, 10, 0) 50%);
+stroke-width: 1px;
+stroke: var(--color-scheme-1-text);
+}
