@@ -13,7 +13,7 @@ const swiper = new Swiper('.swiper-about', {
     clickable: true,
     type: 'bullets',
     bulletActiveClass: 'swiper-pagination-bullet-active',
-    dynamicBullets: true,
+    dynamicBullets: window.innerWidth < 768,
   },
   navigation: {
     nextEl: '.swiper-button-next',
