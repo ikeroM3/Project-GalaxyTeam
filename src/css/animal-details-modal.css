@@ -1,0 +1,298 @@
+
+.pet-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(46,47,66,0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto;
+
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.pet-modal-overlay.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.pet-modal-window {
+  position: relative;
+  background: var(--color-scheme-1-background);
+  padding: 64px 20px;
+  width: 335px;
+  max-height: 100vh;
+  overflow: auto;
+  transform: scale(1);
+  transition: transform 0.3s ease;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+  border-radius: 8px;
+}
+
+.pet-modal-overlay.is-open .pet-modal-window {
+  transform: scale(1);
+} 
+
+.no-scroll {
+  overflow: hidden;
+}
+
+
+.pet-modal-content {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+
+/* CLOSE BTN */
+
+  .pet-modal-close-btn {
+ position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: none;
+    background-color: transparent;
+    color: var(--color-scheme-1-text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.3s;
+    stroke-width: 1px;
+fill: var(--color-scheme-1-text);
+  }
+
+.pet-modal-close-btn:hover {
+    border: 1px solid #88765c;
+    border-radius: 8px;
+    background: #eee9e3;
+}
+.pet-modal-close-btn:focus {
+    border: 1px solid #02060a;
+    border-radius: 8px;
+    background: #c3b49d;
+}
+
+
+/* ЗОБРАЖЕННЯ */
+
+.pet-modal-img {
+display: block;
+  width: 100%;
+  max-width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 8px;
+ background-size: cover;
+ margin-bottom: 32px;
+}
+
+
+/* ТЕКСТОВИЙ КОНТЕНТ */
+.pet-modal-info {
+display: flex;
+flex-direction: column;
+gap: 24px;
+}
+
+.pet-modal-data {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.pet-modal-species {
+font-family: var(--font-family);
+font-weight: 400;
+font-size: 12px;
+line-height: 150%;
+color: var(--color-scheme-1-text);
+}
+
+.pet-modal-name {
+font-family: var(--second-family);
+font-weight: 700;
+font-size: 32px;
+line-height: 120%;
+letter-spacing: -0.01em;
+color: var(--color-scheme-1-text);
+}
+
+
+.pet-modal-meta {
+ display: flex; 
+ flex-direction: row;  
+ gap: 16px;
+font-family: var(--font-family);
+font-weight: 400;
+font-size: 12px;
+line-height: 150%;
+color: var(--color-scheme-1-text);
+}
+
+.pet-modal-age  {
+color: var(--color-scheme-1-text);
+}
+
+.pet-modal-gender {
+color: var(--color-scheme-1-text);
+}
+ 
+
+.pet-modal-list {
+display: flex;
+flex-direction: column;
+gap: 24px;
+width: 100%;
+
+}
+
+
+.pet-modal-item {
+display: flex;
+flex-direction: column;
+gap: 8px;
+}
+
+.pet-modal-title {
+font-family: var(--font-family);
+font-weight: 600;
+font-size: 14px;
+line-height: 150%;
+color: var(--color-scheme-1-text);
+}
+
+.pet-modal-text{
+font-family: var(--font-family);
+font-weight: 400;
+font-size: 14px;
+line-height: 150%;
+color: var(--color-scheme-1-text);
+}
+
+
+/* КНОПКА ВЗЯТИ ДОДОМУ */
+
+.take-btn {
+ width: 100%;
+    height: 45px;
+    margin-top: 0;
+    border: 1px solid var(--color-mariner-dark);
+    border-radius: 8px;
+    padding: 12px 24px;
+    background: var(--color-mariner-dark);
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: var(--color-white);
+    transition: 0.3s, color 0.3s, border 0.3s, border-radius 0.3s;
+}
+
+.take-btn:hover {
+   border: 1px solid var(--color-mariner-dark);
+   color: var(--color-neutral-darkest);
+   background: var(--color-mariner-lighter);
+}
+.take-btn:focus {
+    border: 1px solid var(--color-neutral-darkest);
+   background: var(--color-mariner-light);
+    color: var(--color-neutral-darkest);
+    outline: none;
+}
+
+.take-btn:active {
+       border: 1px solid var(--color-neutral-darkest);
+    color: var(--color-neutral-darkest);
+    box-shadow: inset 0 4px 6px -2px rgba(0, 0, 0, 0.03), inset 0 12px 16px -4px rgba(0, 0, 0, 0.08);
+background: var(--color-mariner-light);
+}
+
+
+  /* tablet */
+
+@media only screen and (min-width: 768px) {
+.pet-modal-window {
+width: 704px;
+height: auto;
+border-radius: 8px;
+padding: 64px 32px;
+    }
+.pet-modal-content {
+flex-direction: row;
+gap: 24px;
+  }
+
+.pet-modal-img {
+ max-width: 280px;
+margin-bottom: 0;
+  }
+.pet-modal-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.pet-modal-data {
+  order: 1;
+}
+
+.take-btn {
+  order: 2;
+}
+
+.pet-modal-list {
+  order: 3;
+}
+
+
+
+}
+  /* desktop */
+
+@media only screen and (min-width: 1440px) {
+  .pet-modal-window {
+ width: 1312px;
+ padding: 64px;
+}
+.pet-modal-data {
+  order: 1;
+}
+
+.pet-modal-list {
+  order: 2;
+}
+
+.take-btn {
+  order: 3;
+width:100%;
+max-width:576px;
+margin-top:auto;
+}
+
+.pet-modal-img{
+max-height: 405px;
+max-width: 576px;
+object-fit:cover;
+flex-shrink:0;
+}
+
+.pet-modal-content{
+display:flex;
+gap: 24px;
+align-items:flex-start;
+
+}
+.pet-modal-info {
+ max-width: 576px;   
+}
+}

@@ -1,0 +1,304 @@
+.reviews {
+  padding: 64px 20px;
+  background-color: #f6f4f1;
+  user-select: none;
+}
+
+.reviews-title {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  text-align: center;
+  color: #02060a;
+  margin-bottom: 24px;
+}
+
+.reviews .swiper-pagination.swiper-pagination-bullets-dynamic {
+  left: 30px !important;
+}
+
+.reviews-subtitle {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: center;
+  color: #02060a;
+  margin-bottom: 40px;
+}
+
+.reviews .swiper-reviews {
+  width: 100%;
+  overflow: hidden;
+}
+
+.review-card-slide {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 40px 0px;
+  background-color: #f6f4f1;
+  border-radius: 8px;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.review-card-slide .rating {
+  display: flex;
+  align-items: center;
+}
+
+.review-card-slide .star-container {
+  display: flex;
+  gap: 4px;
+}
+
+.review-card-slide .star {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.review-card-slide .star svg {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+}
+
+.review-card-slide .star .star-empty {
+  fill: #d9d9d9;
+}
+
+.review-card-slide .star .star-half,
+.review-card-slide .star .star-filled {
+  fill: #d9d9d9;
+  display: none;
+}
+
+.review-card-slide .rating.value-1 .star:nth-child(-n + 1) .star-filled,
+.review-card-slide .rating.value-2 .star:nth-child(-n + 2) .star-filled,
+.review-card-slide .rating.value-3 .star:nth-child(-n + 3) .star-filled,
+.review-card-slide .rating.value-4 .star:nth-child(-n + 4) .star-filled,
+.review-card-slide .rating.value-5 .star:nth-child(-n + 5) .star-filled {
+  display: block;
+  fill: #02060a;
+}
+
+.review-card-text {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #02060a;
+  margin: 0;
+  flex: 1;
+}
+
+.review-author {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #02060a;
+  display: block;
+  margin-top: auto;
+}
+
+.reviews .swiper-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 24px;
+  position: relative;
+}
+
+.reviews .swiper-nav-buttons {
+  display: flex;
+  gap: 12px;
+  margin-left: auto;
+}
+
+.reviews .swiper-controls .swiper-pagination-bullet {
+  width: 6px;
+  height: 6px;
+  background-color: #d9d9d9;
+  border-radius: 50%;
+  opacity: 1;
+  margin: 0;
+  transition:
+    background-color 0.3s,
+    transform 0.3s;
+  cursor: pointer;
+}
+
+.reviews .swiper-controls .swiper-pagination-bullet-active {
+  width: 8px;
+  height: 8px;
+  background-color: #02060a;
+  transform: scale(1.25);
+}
+
+.reviews .swiper-button-prev,
+.reviews .swiper-button-next {
+  position: static;
+  top: auto;
+  margin-top: 0;
+  width: 48px;
+  height: 48px;
+  padding: 12px;
+  border: 1px solid #c3b49d;
+  border-radius: 8px;
+  background-color: #eee9e3;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition:
+    border-color 0.25s cubic-bezier(0.165, 0.84, 0.44, 1),
+    box-shadow 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.reviews .swiper-button-prev::after,
+.reviews .swiper-button-next::after {
+  content: '';
+  font-size: 0;
+  width: 9px;
+  height: 9px;
+  border-top: 2px solid #02060a;
+  border-right: 2px solid #02060a;
+  display: block;
+  transition: border-color 0.2s;
+}
+
+.reviews .swiper-button-prev::after {
+  transform: rotate(-135deg) translate(-1px, 1px);
+}
+
+.reviews .swiper-button-next::after {
+  transform: rotate(45deg) translate(-1px, 1px);
+}
+
+.reviews .swiper-button-prev:hover,
+.reviews .swiper-button-next:hover {
+  border-color: rgba(2, 6, 10, 0.6);
+}
+
+.reviews .swiper-button-prev:active,
+.reviews .swiper-button-next:active {
+  border-color: rgba(2, 6, 10, 0.6);
+  box-shadow:
+    inset 0 4px 6px -2px rgba(0, 0, 0, 0.03),
+    inset 0 12px 16px -4px rgba(0, 0, 0, 0.08);
+}
+
+.reviews .swiper-btn-disabled {
+  border-color: #f6f4f1;
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+@media screen and (min-width: 768px) {
+  .reviews {
+    padding: 80px 32px;
+  }
+
+  .reviews-title {
+    font-size: 40px;
+  }
+
+  .reviews-subtitle {
+    margin-bottom: 48px;
+  }
+
+  .review-card-slide {
+    padding: 40px 0px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .reviews {
+    padding: 80px 64px;
+  }
+
+  .reviews-title {
+    font-size: 48px;
+  }
+
+  .reviews-subtitle {
+    font-size: 18px;
+  }
+
+  .review-card-slide {
+    padding: 40px 0px;
+  }
+}
+
+.review-card-slide .rating .star svg,
+.review-card-slide .rating .star-filled svg,
+.review-card-slide .rating .star-half svg,
+.review-card-slide .rating .star-empty svg {
+  fill: #02060a !important;
+  stroke: #02060a !important;
+  display: block !important;
+}
+
+.review-card-slide .star-container {
+  margin-right: auto;
+}
+
+.success-loader {
+  margin: 0 auto;
+  width: 200px;
+}
+
+.success-btn {
+  border: 1px solid var(--color-mariner-light);
+  border-radius: 8px;
+  padding: 12px;
+  width: 48px;
+  height: 48px;
+
+  background: var(--color-scheme-1-foreground);
+  cursor: pointer;
+}
+
+.success-btn:hover,
+.success-btn:focus {
+  border-color: rgba(2, 6, 10, 0.6);
+  transition: border-color 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.success-btn:active {
+  box-shadow:
+    inset 0 4px 6px -2px rgba(0, 0, 0, 0.03),
+    inset 0 12px 16px -4px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.success-btn-disabled {
+  opacity: 0.4;
+  border-color: var(--color-scheme-1-background);
+  transition:
+    border-color 0.25s cubic-bezier(0.165, 0.84, 0.44, 1),
+    opacity 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.reviews .swiper-controls .swiper-pagination-bullet {
+  width: 6px;
+  height: 6px;
+}
+
+.reviews .swiper-controls .swiper-pagination-bullet-active {
+  transform: scale(1.5);
+}
+
+.swiper-pagination-bullets-dynamic {
+  overflow: hidden;
+  font-size: 8px !important;
+}
