@@ -8,6 +8,7 @@ const showLoader = () => loader?.classList.remove('visually-hidden');
 const hideLoader = () => loader?.classList.add('visually-hidden');
 
 const swiperMarkup = document.querySelector('.swiper-reviews .swiper-wrapper');
+
 function createReviews(reviews) {
   const markup = reviews
     .map(
@@ -25,54 +26,67 @@ function createReviews(reviews) {
         </div>`
     )
     .join('');
+
   swiperMarkup.insertAdjacentHTML('beforeend', markup);
 }
+
 axios.defaults.baseURL = 'https://paw-hut.b.goit.study/';
+
 async function fetchReviews() {
   const { data } = await axios.get('/api/feedbacks');
-
   return data.feedbacks;
 }
-showLoader();
 
-try {
-  const reviews = await fetchReviews();
-  createReviews(reviews);
-  const swiperReviews = new Swiper('.swiper-reviews', {
-    modules: [Navigation, Pagination, Keyboard],
-    slidesPerView: 1,
-    spaceBetween: 30,
-    keyboard: {
-      enabled: true,
-    },
-    pagination: {
-      el: '.swiper-pagination-reviews',
-      clickable: true,
-      renderBullet: function (index, className) {
-        return `
-      <span class="${className}">
-        <svg width="4" height="4" viewBox="0 0 4 4">
-          <circle cx="2" cy="2" r="2"></circle>
-        </svg>
-      </span>
-    `;
+async function initReviews() {
+  showLoader();
+
+  try {
+    const reviews = await fetchReviews();
+    createReviews(reviews);
+
+    new Swiper('.swiper-reviews', {
+      modules: [Navigation, Pagination, Keyboard],
+      slidesPerView: 1,
+      spaceBetween: 30,
+
+      keyboard: {
+        enabled: true,
       },
-    },
-    navigation: {
-      nextEl: '.swiper-nav-buttons .swiper-button-next1',
-      prevEl: '.swiper-nav-buttons .swiper-button-prev1',
-      addIcons: false,
-      disabledClass: 'swiper-btn-disabled',
-    },
-    breakpoints: {
-      768: {
-        slidesPerView: 2,
-        spaceBetween: 30,
+
+      pagination: {
+        el: '.swiper-pagination-reviews',
+        clickable: true,
+        renderBullet: function (index, className) {
+          return `
+            <span class="${className}">
+              <svg width="4" height="4" viewBox="0 0 4 4">
+                <circle cx="2" cy="2" r="2"></circle>
+              </svg>
+            </span>
+          `;
+        },
       },
-    },
-  });
-} catch (error) {
-  console.error('API Error:', error);
-} finally {
-  hideLoader();
+
+      navigation: {
+        nextEl: '.swiper-nav-buttons .swiper-button-next1',
+        prevEl: '.swiper-nav-buttons .swiper-button-prev1',
+        addIcons: false,
+        disabledClass: 'swiper-btn-disabled',
+      },
+
+      breakpoints: {
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 30,
+        },
+      },
+    });
+
+  } catch (error) {
+    console.error('API Error:', error);
+  } finally {
+    hideLoader();
+  }
 }
+
+initReviews();
