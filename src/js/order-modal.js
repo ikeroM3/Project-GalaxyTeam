@@ -36,8 +36,10 @@ modalForm.addEventListener('submit', async e => {
     name: name.value,
     phone: phone.value,
     animalId: currentAnimalID,
-    comment: comment.value,
   };
+  if (comment.value.trim()) {
+  formData.comment = comment.value.trim();
+  }
   try {
     await createOrder(formData);
     Swal.fire({
