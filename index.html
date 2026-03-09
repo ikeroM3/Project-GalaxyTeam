@@ -18,11 +18,10 @@
     <script type="module" crossorigin src="/Project-GalaxyTeam/index.js"></script>
     <link rel="modulepreload" crossorigin href="/Project-GalaxyTeam/assets/vendor-DD8E1I8W.js">
     <link rel="stylesheet" crossorigin href="/Project-GalaxyTeam/assets/vendor-jqq0RxJc.css">
-    <link rel="stylesheet" crossorigin href="/Project-GalaxyTeam/assets/index-B9FuvCYK.css">
+    <link rel="stylesheet" crossorigin href="/Project-GalaxyTeam/assets/index-B_vadp_4.css">
   </head>
   <body>
-    <header class="header-cont">
-<section class="header">
+    <header class="header">
   <div class="container">
     <nav class="nav">
       <a class="nav-logo" href="./index.html" aria-label="Site logo">
@@ -44,7 +43,7 @@
   </svg>
 </button>
 </nav>
-</section>
+
 </header>
 
 
@@ -62,10 +61,11 @@
   </div>
 </section>
 
-      <section class="pets-list-section container" id="pets-list">
-  <h2 class="pets-list-title">Наші хвостики</h2>
-  <h3 class="pets-list-subtitle">Вони дуже чекають на знайомство з вами</h3>
-  <div class="loader visually-hidden">
+      <section class="pets-list-section" id="pets-list">
+  <div class="container container-pets-list">
+    <h2 class="pets-list-title">Наші хвостики</h2>
+    <h3 class="pets-list-subtitle">Вони дуже чекають на знайомство з вами</h3>
+    <div class="loader visually-hidden">
   <div
     aria-label="Orange and tan hamster running in a metal wheel"
     role="img"
@@ -93,13 +93,41 @@
   </div>
 </div>
 
-  <ul class="categories-list"></ul>
-  <ul class="pets-list"></ul>
+    <ul class="categories-list"></ul>
+    <ul class="pets-list"></ul>
 
-  <button class="loadmore-btn">Показати більше</button>
+    <div class="loadmore-loader loader visually-hidden">
+      <div
+        aria-label="Orange and tan hamster running in a metal wheel"
+        role="img"
+        class="wheel-and-hamster"
+      >
+        <div class="wheel"></div>
+
+        <div class="hamster">
+          <div class="hamster__body">
+            <div class="hamster__head">
+              <div class="hamster__ear"></div>
+              <div class="hamster__eye"></div>
+              <div class="hamster__nose"></div>
+            </div>
+
+            <div class="hamster__limb hamster__limb--fr"></div>
+            <div class="hamster__limb hamster__limb--fl"></div>
+            <div class="hamster__limb hamster__limb--br"></div>
+            <div class="hamster__limb hamster__limb--bl"></div>
+            <div class="hamster__tail"></div>
+          </div>
+        </div>
+
+        <div class="spoke"></div>
+      </div>
+    </div>
+    <button class="loadmore-btn">Показати більше</button>
+  </div>
 </section>
 
-      <section class="about-us-section section" id="about">
+      <section class="about-us-section" id="about">
   <div class="about-us-container container">
     <h2 class="about-us-title">Чому Хатинка Лапок</h2>
     <div class="swiper swiper-about">
@@ -258,132 +286,198 @@
   </div>
 </section>
 
-      <section id="faq" class="container faq-container">
+      <section id="faq" class="faq-container">
+  <div class="container">
     <h3 class="faq-title">Все, що ви хотіли знати</h3>
 
     <ul class="faq-list">
-        <li class="faq-list-card">
-            <div class="faq-list-question-container">
-                <div class="faq-list-question">Я мрію про пухнастика! Що мені потрібно зробити, щоб забрати хвостика
-                    додому?</div>
-                <svg class="faq-close-icon" width="24" height="24">
-                    <use href="/Project-GalaxyTeam/assets/icons-DVIhtMkZ.svg#close"></use>
-                </svg>
-            </div>
-            <div class="faq-list-answer-container">
-                <p class="faq-list-answer">Це чудово, що ви готові подарувати дім одному з наших підопічних! Ми дуже
-                    раді будемо вам у цьому допомогти. Процес «усиновлення» у нас простий та зрозумілий:</p>
-                <ol class="answer-list">
-                    <li class="answer-list-item">Оберіть друга: Придивіться до наших хвостиків у розділі «Знайди друга».
-                    </li>
-                    <li class="answer-list-item">Залиште заявку: Коли відчуєте, що це «ваша» тваринка, натискайте кнопку
-                        «Взяти додому» та заповніть коротку анкету.</li>
-                    <li class="answer-list-item">Поговоріть з куратором: Наш волонтер зателефонує вам, щоб познайомитись
-                        ближче, розповісти про характер тваринки та відповісти на всі ваші питання..</li>
-                    <li class="answer-list-item">
-                        Приїжджайте знайомитись: Якщо ви ідеально підходите одне одному, ми домовимось про зустріч у
-                        притулку.</li>
-                    <li class="answer-list-item">Дорога додому: Після знайомства та підписання договору про
-                        відповідальне утримання, ваш новий друг поїде з вами у своє нове, щасливе життя!</li>
-                </ol>
-            </div>
-        </li>
+      <li class="faq-list-card">
+        <div class="faq-list-question-container">
+          <div class="faq-list-question">
+            Я мрію про пухнастика! Що мені потрібно зробити, щоб забрати
+            хвостика додому?
+          </div>
+          <svg class="faq-close-icon" width="24" height="24">
+            <use href="/Project-GalaxyTeam/assets/icons-DVIhtMkZ.svg#close"></use>
+          </svg>
+        </div>
+        <div class="faq-list-answer-container">
+          <p class="faq-list-answer">
+            Це чудово, що ви готові подарувати дім одному з наших підопічних! Ми
+            дуже раді будемо вам у цьому допомогти. Процес «усиновлення» у нас
+            простий та зрозумілий:
+          </p>
+          <ol class="answer-list">
+            <li class="answer-list-item">
+              Оберіть друга: Придивіться до наших хвостиків у розділі «Знайди
+              друга».
+            </li>
+            <li class="answer-list-item">
+              Залиште заявку: Коли відчуєте, що це «ваша» тваринка, натискайте
+              кнопку «Взяти додому» та заповніть коротку анкету.
+            </li>
+            <li class="answer-list-item">
+              Поговоріть з куратором: Наш волонтер зателефонує вам, щоб
+              познайомитись ближче, розповісти про характер тваринки та
+              відповісти на всі ваші питання..
+            </li>
+            <li class="answer-list-item">
+              Приїжджайте знайомитись: Якщо ви ідеально підходите одне одному,
+              ми домовимось про зустріч у притулку.
+            </li>
+            <li class="answer-list-item">
+              Дорога додому: Після знайомства та підписання договору про
+              відповідальне утримання, ваш новий друг поїде з вами у своє нове,
+              щасливе життя!
+            </li>
+          </ol>
+        </div>
+      </li>
 
-        <li class="faq-list-card">
-            <div class="faq-list-question-container">
-                <div class="faq-list-question">Як мені найкраще підготувати свій дім та родину до появи хвостика?</div>
-                <svg class="faq-close-icon" width="24" height="24">
-                    <use href="/Project-GalaxyTeam/assets/icons-DVIhtMkZ.svg#close"></use>
-                </svg>
-            </div>
-            <div class="faq-list-answer-container">
-                <p class="faq-list-answer">Чудове питання, яке показує вашу турботу! Переїзд — це завжди невеликий стрес
-                    для тваринки, але правильна підготовка зробить цей процес легким і радісним. Ось кілька порад::</p>
-                <ul class="answer-list">
-                    <li class="answer-list-item">Безпечний простір: Переконайтесь, що на вікнах є сітки, а дроти та
-                        побутова хімія сховані.
-                    </li>
-                    <li class="answer-list-item">Особисті речі: Підготуйте для хвостика дві мисочки (для їжі та води),
-                        лежанку чи будиночок, лоток з наповнювачем для котика або повідець і нашийник для собачки.</li>
-                    <li class="answer-list-item">Сімейна розмова: Обговоріть з рідними майбутні обов'язки. Важливо, щоб
-                        усі були готові до появи нового мешканця.</li>
+      <li class="faq-list-card">
+        <div class="faq-list-question-container">
+          <div class="faq-list-question">
+            Як мені найкраще підготувати свій дім та родину до появи хвостика?
+          </div>
+          <svg class="faq-close-icon" width="24" height="24">
+            <use href="/Project-GalaxyTeam/assets/icons-DVIhtMkZ.svg#close"></use>
+          </svg>
+        </div>
+        <div class="faq-list-answer-container">
+          <p class="faq-list-answer">
+            Чудове питання, яке показує вашу турботу! Переїзд — це завжди
+            невеликий стрес для тваринки, але правильна підготовка зробить цей
+            процес легким і радісним. Ось кілька порад::
+          </p>
+          <ul class="answer-list">
+            <li class="answer-list-item">
+              Безпечний простір: Переконайтесь, що на вікнах є сітки, а дроти та
+              побутова хімія сховані.
+            </li>
+            <li class="answer-list-item">
+              Особисті речі: Підготуйте для хвостика дві мисочки (для їжі та
+              води), лежанку чи будиночок, лоток з наповнювачем для котика або
+              повідець і нашийник для собачки.
+            </li>
+            <li class="answer-list-item">
+              Сімейна розмова: Обговоріть з рідними майбутні обов'язки. Важливо,
+              щоб усі були готові до появи нового мешканця.
+            </li>
 
-                    <li class="answer-list-item">Терпіння та любов: Дайте тваринці час, щоб звикнути. Не квапте її,
-                        будьте поруч,
-                        розмовляйте лагідним голосом — і ваша любов творитиме дива!</li>
-                </ul>
-            </div>
-        </li>
+            <li class="answer-list-item">
+              Терпіння та любов: Дайте тваринці час, щоб звикнути. Не квапте її,
+              будьте поруч, розмовляйте лагідним голосом — і ваша любов
+              творитиме дива!
+            </li>
+          </ul>
+        </div>
+      </li>
 
-        <li class="faq-list-card">
-            <div class="faq-list-question-container">
-                <div class="faq-list-question">Чи можу я бути впевненим, що тваринка здорова? Розкажіть про щеплення.
-                </div>
-                <svg class="faq-close-icon" width="24" height="24">
-                    <use href="/Project-GalaxyTeam/assets/icons-DVIhtMkZ.svg#close"></use>
-                </svg>
-            </div>
-            <div class="faq-list-answer-container">
-                <p class="faq-list-answer">Так, звісно. Здоров'я наших підопічних — наш головний пріоритет. Кожна
-                    тваринка, яка потрапляє до нас, проходить повний огляд у ветеринара. Ми гарантуємо, що:</p>
-                <ul class="answer-list">
-                    <li class="answer-list-item">Усі хвостики оброблені від бліх та глистів.</li>
-                    <li class="answer-list-item">Усі вакциновані комплексною вакциною за віком.</li>
-                    <li class="answer-list-item">Дорослі тварини (зазвичай від 6-8 місяців) стерилізовані/кастровані.
-                    </li>
-                </ul>
-                <p class="faq-list-answer-added">Разом із тваринкою ви обов'язково отримаєте її ветеринарний паспорт з
-                    усіма відмітками. Якщо у когось є особливі потреби у догляді чи харчуванні, ми чесно і детально про
-                    це розповімо.</p>
-            </div>
-        </li>
+      <li class="faq-list-card">
+        <div class="faq-list-question-container">
+          <div class="faq-list-question">
+            Чи можу я бути впевненим, що тваринка здорова? Розкажіть про
+            щеплення.
+          </div>
+          <svg class="faq-close-icon" width="24" height="24">
+            <use href="/Project-GalaxyTeam/assets/icons-DVIhtMkZ.svg#close"></use>
+          </svg>
+        </div>
+        <div class="faq-list-answer-container">
+          <p class="faq-list-answer">
+            Так, звісно. Здоров'я наших підопічних — наш головний пріоритет.
+            Кожна тваринка, яка потрапляє до нас, проходить повний огляд у
+            ветеринара. Ми гарантуємо, що:
+          </p>
+          <ul class="answer-list">
+            <li class="answer-list-item">
+              Усі хвостики оброблені від бліх та глистів.
+            </li>
+            <li class="answer-list-item">
+              Усі вакциновані комплексною вакциною за віком.
+            </li>
+            <li class="answer-list-item">
+              Дорослі тварини (зазвичай від 6-8
+              місяців) стерилізовані/кастровані.
+            </li>
+          </ul>
+          <p class="faq-list-answer-added">
+            Разом із тваринкою ви обов'язково отримаєте її ветеринарний паспорт
+            з усіма відмітками. Якщо у когось є особливі потреби у догляді чи
+            харчуванні, ми чесно і детально про це розповімо.
+          </p>
+        </div>
+      </li>
 
-        <li class="faq-list-card">
-            <div class="faq-list-question-container">
-                <div class="faq-list-question">Я дуже хочу допомогти, але поки не готовий до адопції. Чим я можу
-                    підтримати «Хатинку лапок»?</div>
-                <svg class="faq-close-icon" width="24" height="24">
-                    <use href="/Project-GalaxyTeam/assets/icons-DVIhtMkZ.svg#close"></use>
-                </svg>
-            </div>
-            <div class="faq-list-answer-container">
-                <p class="faq-list-answer">Дякуємо вам за велике серце та бажання допомогти! Кожна допомога для нас
-                    безцінна. Навіть якщо ви не можете взяти тваринку, ви можете стати її янголом-охоронцем. Ось як:</p>
-                <ul class="answer-list">
-                    <li class="answer-list-item">Допомогти фінансово: Ваша пожертва піде на корм, ліки, оплату
-                        комунальних послуг та зарплату персоналу.</li>
-                    <li class="answer-list-item">Стати волонтером: Нам завжди потрібні люблячі руки для прогулянок з
-                        собачками, прибирання та, найголовніше, для спілкування з тваринками.</li>
-                    <li class="answer-list-item">Подарувати необхідне: Ми завжди раді кормам, лікам, наповнювачам для
-                        лотків, іграшкам, теплим ковдрам.</li>
-                    <li class="answer-list-item">Допомогти інформаційно: Найпростіший, але дуже дієвий спосіб —
-                        розповідати про нас у соцмережах. Можливо, саме ваш репост допоможе комусь знайти свою долю!
-                    </li>
-                </ul>
-            </div>
-        </li>
+      <li class="faq-list-card">
+        <div class="faq-list-question-container">
+          <div class="faq-list-question">
+            Я дуже хочу допомогти, але поки не готовий до адопції. Чим я можу
+            підтримати «Хатинку лапок»?
+          </div>
+          <svg class="faq-close-icon" width="24" height="24">
+            <use href="/Project-GalaxyTeam/assets/icons-DVIhtMkZ.svg#close"></use>
+          </svg>
+        </div>
+        <div class="faq-list-answer-container">
+          <p class="faq-list-answer">
+            Дякуємо вам за велике серце та бажання допомогти! Кожна допомога для
+            нас безцінна. Навіть якщо ви не можете взяти тваринку, ви можете
+            стати її янголом-охоронцем. Ось як:
+          </p>
+          <ul class="answer-list">
+            <li class="answer-list-item">
+              Допомогти фінансово: Ваша пожертва піде на корм, ліки, оплату
+              комунальних послуг та зарплату персоналу.
+            </li>
+            <li class="answer-list-item">
+              Стати волонтером: Нам завжди потрібні люблячі руки для прогулянок
+              з собачками, прибирання та, найголовніше, для спілкування з
+              тваринками.
+            </li>
+            <li class="answer-list-item">
+              Подарувати необхідне: Ми завжди раді кормам, лікам, наповнювачам
+              для лотків, іграшкам, теплим ковдрам.
+            </li>
+            <li class="answer-list-item">
+              Допомогти інформаційно: Найпростіший, але дуже дієвий спосіб —
+              розповідати про нас у соцмережах. Можливо, саме ваш репост
+              допоможе комусь знайти свою долю!
+            </li>
+          </ul>
+        </div>
+      </li>
 
-        <li class="faq-list-card">
-            <div class="faq-list-question-container">
-                <div class="faq-list-question">Мені сподобалась одна з ваших тваринок на сайті. Чи можу я приїхати, щоб
-                    познайомитися з нею особисто?</div>
-                <svg class="faq-close-icon" width="24" height="24">
-                    <use href="/Project-GalaxyTeam/assets/icons-DVIhtMkZ.svg#close"></use>
-                </svg>
-            </div>
-            <div class="faq-list-answer-container">
-                <p class="faq-list-answer">Авжеж! Ми віримо, що справжня магія стається лише при особистій зустрічі. Щоб знайомство було
-                    комфортним і для вас, і для тваринки, ми просимо вас спочатку заповнити онлайн-заявку на нашому
-                    сайті.</p>
-                <p class="faq-list-answer">Після цього з вами зв'яжеться куратор тваринки, щоб домовитись про зручний час для вашого візиту.
-                    Такий підхід дозволяє нам приділити вам максимум уваги та уникнути зайвого стресу для наших
-                    підопічних. З нетерпінням чекаємо на знайомство!</p>
-            </div>
-        </li>
+      <li class="faq-list-card">
+        <div class="faq-list-question-container">
+          <div class="faq-list-question">
+            Мені сподобалась одна з ваших тваринок на сайті. Чи можу я приїхати,
+            щоб познайомитися з нею особисто?
+          </div>
+          <svg class="faq-close-icon" width="24" height="24">
+            <use href="/Project-GalaxyTeam/assets/icons-DVIhtMkZ.svg#close"></use>
+          </svg>
+        </div>
+        <div class="faq-list-answer-container">
+          <p class="faq-list-answer">
+            Авжеж! Ми віримо, що справжня магія стається лише при особистій
+            зустрічі. Щоб знайомство було комфортним і для вас, і для тваринки,
+            ми просимо вас спочатку заповнити онлайн-заявку на нашому сайті.
+          </p>
+          <p class="faq-list-answer">
+            Після цього з вами зв'яжеться куратор тваринки, щоб домовитись про
+            зручний час для вашого візиту. Такий підхід дозволяє нам приділити
+            вам максимум уваги та уникнути зайвого стресу для наших підопічних.
+            З нетерпінням чекаємо на знайомство!
+          </p>
+        </div>
+      </li>
     </ul>
+  </div>
 </section>
-      <section id="story" class="reviews container">
-  <div class="reviews-container">
+
+      <section id="story" class="reviews">
+  <div class="container">
     <h2 class="reviews-title">Щасливі історії, що надихають</h2>
 
     <p class="reviews-subtitle">
@@ -422,7 +516,7 @@
       <div class="swiper-wrapper"></div>
     </div>
     <div class="swiper-controls">
-      <div class="swiper-pagination swiper-pagination-reviews"></div>
+      <div class="success-pagination swiper-pagination-reviews"></div>
       <div class="swiper-nav-buttons">
         <div
           class="swiper-button-prev1 success-btn"
@@ -534,42 +628,43 @@
 </div>
 
     <div class="mobile-menu">
-  <button class="close-btn" type="button">
-    <svg class="close-icon" width="24" height="24">
-      <use href="/Project-GalaxyTeam/assets/icons-DVIhtMkZ.svg#close"></use>
-    </svg>
-  </button>
-
-  <nav class="nav">
-    <a class="nav-logo-mob" href="./index.html" aria-label="Site logo">
-      <svg class="logo-icon" width="157" height="51">
-        <use href="/Project-GalaxyTeam/assets/icons-DVIhtMkZ.svg#logo"></use>
+  <div class="container">
+    <button class="close-btn" type="button">
+      <svg class="close-icon" width="24" height="24">
+        <use href="/Project-GalaxyTeam/assets/icons-DVIhtMkZ.svg#close"></use>
       </svg>
-    </a>
-  </nav>
-  <ul class="list-mob">
-    <li class="item-mob">
-      <a class="link-mob" href="#pets-list">Знайди друга</a>
-    </li>
-    <li class="item-mob"><a class="item-link" href="#about">Про нас</a></li>
-    <li class="link-mob">
-      <a class="item-link" href="#faq">Часті запитання</a>
-    </li>
-    <li class="item-mob">
-      <a class="link-mob" href="#history">Історії успіху</a>
-    </li>
-  </ul>
-  <a class="mob-menu" href="#pets-list">Взяти друга</a>
+    </button>
+
+    <nav class="nav">
+      <a class="nav-logo-mob" href="./index.html" aria-label="Site logo">
+        <svg class="logo-icon" width="157" height="51">
+          <use href="/Project-GalaxyTeam/assets/icons-DVIhtMkZ.svg#logo"></use>
+        </svg>
+      </a>
+    </nav>
+    <ul class="list-mob">
+      <li class="item-mob">
+        <a class="link-mob" href="#pets-list">Знайди друга</a>
+      </li>
+      <li class="item-mob"><a class="item-link" href="#about">Про нас</a></li>
+      <li class="link-mob">
+        <a class="item-link" href="#faq">Часті запитання</a>
+      </li>
+      <li class="item-mob">
+        <a class="link-mob" href="#history">Історії успіху</a>
+      </li>
+    </ul>
+    <a class="mob-menu" href="#pets-list">Взяти друга</a>
+  </div>
 </div>
 
-    <div class="pet-modal-overlay .visually-hidden">
+    <div class="backdrop-pet visually-hidden">
   <div class="pet-modal-window">
     <button type="button" class="pet-modal-close-btn">
       <svg class="close-icon" width="24" height="24">
         <use href="/Project-GalaxyTeam/assets/icons-DVIhtMkZ.svg#close"></use>
       </svg>
     </button>
-
     <div class="pet-modal-content"></div>
   </div>
 </div>
