@@ -1,13 +1,14 @@
 .about-us-container {
-  padding-top: 64px;
-  padding-bottom: 64px;
   display: flex;
   flex-direction: column;
   position: relative;
   align-items: flex-end;
   user-select: none;
 }
-
+.about-us-section {
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
 .about-us-title {
   max-width: 768px;
   text-align: center;
@@ -31,7 +32,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 24px;
 }
 
 .swiper-about picture {
@@ -59,11 +59,9 @@
 }
 
 .about-us-container .container-swiper {
-  height: 68px;
-  width: 100%;
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
 }
 
 .about-us-container .btn-wrapper {
@@ -72,7 +70,19 @@
   gap: 8px;
   padding-right: 8px;
 }
-
+.swiper-pagination {
+  align-items: center;
+  position: static !important;
+  left: auto !important;
+  transform: none !important;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  width: auto !important;
+  margin-left: 0;
+  z-index: 15;
+}
 .about-us-container .swiper-pagination-bullet-active {
   background-color: black;
 }
@@ -130,6 +140,7 @@
   }
 
   .about-us-container .container-swiper {
+    margin-top: 16px;
     height: 28px;
   }
 
@@ -165,7 +176,7 @@
 }
 
 @media only screen and (min-width: 1440px) {
-  .about-us-container {
+  .about-us-section {
     padding-top: 80px;
     padding-bottom: 80px;
   }
@@ -176,7 +187,6 @@
 
   .swiper-about .swiper-slide {
     height: 753px;
-    margin-bottom: 48px;
   }
 
   .about-us-container .swiper-about .swiper-text {

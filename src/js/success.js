@@ -40,7 +40,9 @@ function createReviews(reviews) {
 axios.defaults.baseURL = 'https://paw-hut.b.goit.study/';
 
 async function fetchReviews() {
-  const { data } = await axios.get('/api/feedbacks');
+  const { data } = await axios.get('/api/feedbacks', {
+    params: { page: 1, limit: 25 },
+  });
   return data.feedbacks;
 }
 

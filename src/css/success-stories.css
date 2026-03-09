@@ -1,5 +1,5 @@
 .reviews {
-  padding: 64px 20px;
+  padding: 64px 0px;
   background-color: #f6f4f1;
   user-select: none;
 }
@@ -38,11 +38,13 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
-  padding: 40px 0px;
-  background-color: #f6f4f1;
-  border-radius: 8px;
+  padding: 0;
+  background: transparent;
+  border: none;
   height: 100%;
-  box-sizing: border-box;
+  cursor: grab;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 .review-card-slide .rating {
@@ -205,7 +207,7 @@
 
 @media screen and (min-width: 768px) {
   .reviews {
-    padding: 80px 32px;
+    padding: 80px 0px;
   }
 
   .reviews-title {
@@ -215,15 +217,11 @@
   .reviews-subtitle {
     margin-bottom: 48px;
   }
-
-  .review-card-slide {
-    padding: 40px 0px;
-  }
 }
 
 @media only screen and (min-width: 1440px) {
   .reviews {
-    padding: 80px 64px;
+    padding: 80px 0px;
   }
 
   .reviews-title {
@@ -232,10 +230,6 @@
 
   .reviews-subtitle {
     font-size: 18px;
-  }
-
-  .review-card-slide {
-    padding: 40px 0px;
   }
 }
 
@@ -301,4 +295,7 @@
 .swiper-pagination-bullets-dynamic {
   overflow: hidden;
   font-size: 8px !important;
+}
+.success-pagination {
+  transform: none !important;
 }
