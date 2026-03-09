@@ -11,3 +11,5 @@ import '/js/order-modal.js';
 import '/js/pets-list-render.js';
 import '/js/pets-list-main.js';
 import '/js/success.js';
+
+import '/js/scroll.js';
