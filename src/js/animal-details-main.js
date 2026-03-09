@@ -1,9 +1,9 @@
 import { openModalWindow } from './order-modal.js';
 import { renderPetModal } from './animal-details-render.js';
 
-const backdrop = document.querySelector('.pet-modal-overlay');
-const content = document.querySelector('.pet-modal-content');
-const closeBtn = document.querySelector('.pet-modal-close-btn');
+const backdrop = document.querySelector('.backdrop-pet');
+const content = backdrop.querySelector('.pet-modal-content');
+const closeBtn = backdrop.querySelector('.pet-modal-close-btn');
 
 let escListener = null;
 let outsideClickListener = null;

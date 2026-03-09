@@ -1,35 +1,38 @@
-<section class="pets-list-section container" id="pets-list">
-  <h2 class="pets-list-title">Наші хвостики</h2>
-  <h3 class="pets-list-subtitle">Вони дуже чекають на знайомство з вами</h3>
-  <load src="/partials/loader.html" />
-  <ul class="categories-list"></ul>
-  <ul class="pets-list"></ul>
-  <div class="loadmore-loader loader visually-hidden">
-    <div
-      aria-label="Orange and tan hamster running in a metal wheel"
-      role="img"
-      class="wheel-and-hamster"
-    >
-      <div class="wheel"></div>
+<section class="pets-list-section" id="pets-list">
+  <div class="container container-pets-list">
+    <h2 class="pets-list-title">Наші хвостики</h2>
+    <h3 class="pets-list-subtitle">Вони дуже чекають на знайомство з вами</h3>
+    <load src="/partials/loader.html" />
+    <ul class="categories-list"></ul>
+    <ul class="pets-list"></ul>
 
-      <div class="hamster">
-        <div class="hamster__body">
-          <div class="hamster__head">
-            <div class="hamster__ear"></div>
-            <div class="hamster__eye"></div>
-            <div class="hamster__nose"></div>
+    <div class="loadmore-loader loader visually-hidden">
+      <div
+        aria-label="Orange and tan hamster running in a metal wheel"
+        role="img"
+        class="wheel-and-hamster"
+      >
+        <div class="wheel"></div>
+
+        <div class="hamster">
+          <div class="hamster__body">
+            <div class="hamster__head">
+              <div class="hamster__ear"></div>
+              <div class="hamster__eye"></div>
+              <div class="hamster__nose"></div>
+            </div>
+
+            <div class="hamster__limb hamster__limb--fr"></div>
+            <div class="hamster__limb hamster__limb--fl"></div>
+            <div class="hamster__limb hamster__limb--br"></div>
+            <div class="hamster__limb hamster__limb--bl"></div>
+            <div class="hamster__tail"></div>
           </div>
-
-          <div class="hamster__limb hamster__limb--fr"></div>
-          <div class="hamster__limb hamster__limb--fl"></div>
-          <div class="hamster__limb hamster__limb--br"></div>
-          <div class="hamster__limb hamster__limb--bl"></div>
-          <div class="hamster__tail"></div>
         </div>
-      </div>
 
-      <div class="spoke"></div>
+        <div class="spoke"></div>
+      </div>
     </div>
+    <button class="loadmore-btn">Показати більше</button>
   </div>
-  <button class="loadmore-btn">Показати більше</button>
 </section>

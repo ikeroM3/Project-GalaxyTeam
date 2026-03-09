@@ -26,11 +26,13 @@ body {
 
 /* MODAL */
 .modal {
-  position: relative;
-  width: 335px;
-  padding: 64px 20px;
-  background: #f6f4f1;
-  border-radius: 8px;
+    position: relative;
+    width: 335px;
+    padding: 64px 20px;
+    background: #f6f4f1;
+    border-radius: 8px;
+    max-height: 90%;
+    overflow-y: auto;
 }
 
 /* CLOSE BUTTON */

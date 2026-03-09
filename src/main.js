@@ -10,3 +10,4 @@ import '/js/api.js';
 import '/js/order-modal.js';
 import '/js/pets-list-render.js';
 import '/js/pets-list-main.js';
+import '/js/success.js';
