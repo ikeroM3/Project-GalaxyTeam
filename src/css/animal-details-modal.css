@@ -21,11 +21,12 @@
   background: var(--color-scheme-1-background);
   padding: 64px 20px;
   width: 335px;
-  max-height: 90vh;
+  max-height: 100vh;
   overflow: auto;
   transform: scale(1);
   transition: transform 0.3s ease;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  position: relative;
   border-radius: 8px;
 }
 
@@ -206,10 +207,10 @@
 
 /* TABLET */
 @media only screen and (min-width: 768px) {
-  /* .pet-modal-window {
+  .pet-modal-window {
     width: 704px;
     padding: 64px 32px;
-  } */
+  }
   .pet-modal-content {
     flex-direction: row;
     gap: 24px;

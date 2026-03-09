@@ -36,6 +36,7 @@
   align-items: center;
   gap: 24px;
   justify-content: space-between;
+  cursor: pointer;
 }
 
 .faq-list-question {
