@@ -13,8 +13,12 @@ const swiper = new Swiper('.swiper-about', {
     clickable: true,
     type: 'bullets',
     bulletActiveClass: 'swiper-pagination-bullet-active',
-    dynamicBullets: window.innerWidth < 768,
   },
+  on: {
+    init: updateBullets,
+    slideChange: updateBullets,
+  },
+
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
@@ -22,3 +26,22 @@ const swiper = new Swiper('.swiper-about', {
     disabledClass: 'swiper-btn-disabled',
   },
 });
+
+function updateBullets(swiper) {
+  const bullets = swiper.pagination.bullets;
+  const active = swiper.activeIndex;
+
+  bullets.forEach((bullet, index) => {
+    bullet.classList.remove('bullet-small', 'bullet-medium', 'bullet-large');
+
+    const distance = Math.abs(index - active);
+
+    if (distance === 0) {
+      bullet.classList.add('bullet-large');
+    } else if (distance === 1) {
+      bullet.classList.add('bullet-medium');
+    } else {
+      bullet.classList.add('bullet-small');
+    }
+  });
+}
