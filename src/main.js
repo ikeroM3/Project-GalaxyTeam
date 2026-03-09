@@ -13,3 +13,4 @@ import '/js/pets-list-main.js';
 import '/js/success.js';
 
 import '/js/scroll.js';
+import '/js/switch.js';

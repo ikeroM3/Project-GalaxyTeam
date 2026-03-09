@@ -1,0 +1,83 @@
+[data-theme='dark'] {
+  --b-glass: #2e2e4e;
+  --b-glow: rgba(255, 240, 140, 0);
+  --b-shine: rgba(255, 255, 255, 0);
+  --b-wire: #3a3a5c;
+  --b-base: #222240;
+  --b-sep: #181830;
+}
+
+.theme-btn {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  padding: 4px;
+  transition: opacity 0.3s;
+  user-select: none;
+  margin-left: auto;
+}
+.theme-btn:hover {
+  opacity: 0.8;
+}
+
+.bulb-halo {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 210, 60, 0.5) 0%,
+    transparent 65%
+  );
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+  opacity: 1;
+  transition: opacity 0.5s;
+  pointer-events: none;
+  filter: blur(8px);
+  z-index: 0;
+}
+[data-theme='dark'] .bulb-halo {
+  opacity: 0;
+}
+.bulb-icon {
+  width: 40px;
+  height: 54px;
+  overflow: visible;
+  position: relative;
+  z-index: 1;
+}
+.btn-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: #aaa;
+  transition: color 0.4s;
+  font-family: sans-serif;
+}
+
+[data-theme='dark'] {
+  --color-mariner-lightest: #2a2520;
+  --color-mariner-lighter: #322d27;
+  --color-mariner-light: #6b5a45;
+  --color-mariner: #6b5a45;
+  --color-mariner-dark: #a08060;
+  --color-mariner-darker: #c8a878;
+  --color-mariner-darkest: #e8d8b8;
+  --color-neutral-darkest: #f0e8d8;
+  --color-neutral-darker: #d0c8b0;
+  --color-neutral-dark: #a09880;
+  --color-neutral: #706858;
+  --color-neutral-light: #504840;
+  --color-neutral-lighter: #3a3028;
+  --color-neutral-lightest: #302820;
+  --opacity-neutral-darkest-15: rgba(240, 232, 216, 0.15);
+  --opacity-neutral-darkest-20: rgba(240, 232, 216, 0.2);
+}
