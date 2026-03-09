@@ -206,10 +206,10 @@
 
 /* TABLET */
 @media only screen and (min-width: 768px) {
-  /* .pet-modal-window {
+  .pet-modal-window {
     width: 704px;
     padding: 64px 32px;
-  } */
+  }
   .pet-modal-content {
     flex-direction: row;
     gap: 24px;
